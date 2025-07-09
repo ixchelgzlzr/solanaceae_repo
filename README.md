@@ -10,9 +10,12 @@ This repository contains the data and the code necessary to replicate the result
 
 
 ## Phylogenetic analyses
-All the phylogenetic analyses are set up to be run from the root of this directory calling RevBayes from the command line, e.g. `rb path/to/analysis/header.rev`. We will indicate below the command to run each analysis. The code is written in a modular way, check the `modules/` folder to see all the different variants of each model component and these different model components are called by template files. If you want to replicate our analyses in your own computer, all you have to do is to modify the `header` files. In these, you can specify the directories, and name variants of your output path. 
+All the phylogenetic analyses are set up to be run from the root of this directory calling RevBayes from the command line, e.g. `rb path/to/analysis/header.rev`. We will indicate below the command to run each analysis. The code is written in a modular way, check the `modules/` folder to see all the different variants of each model component and these different model components are called by template files. If you want to replicate our analyses in your own computer, all you have to do is to modify the `header` files. In these, you can specify the director for your output path by specifying `output_dir` and `output_extra`.
+
 
 ```
+# Folder structure
+
 |--headers          # contains the headers to run the analyses
     |--MCMC             # phylogenetic inference
     |--SummaryTrees     # summary trees if needed
@@ -29,6 +32,19 @@ All the phylogenetic analyses are set up to be run from the root of this directo
 |--output          # by default the output will be written in this folder
 
 ```
+To run the preliminary analyses that only infer phylogenetic relationships between all the tips (fossils and extant) without inferring divergence times, you can run: 
+* `rb headers/MCMC/only_morph_no_continuous.Rev`, to use only categorical morphological traits.
+* `rb headers/MCMC/only_morph.Rev` , to use categorical and continuous morphological traits.
+* `rb headers/MCMC/unrooted_all_data_mole_scaler.Rev`, to use categorical and continuous morphological traits, as well as molecular data.
+
+To run the total evidence dating analyses to infer both divergence times and phylogenetic relationships, you can run:
+* `rb headers/MCMC/model_TED_w_backbone_const.Rev`, to run the **time homogeneous** TED model.
+* `rb headers/MCMC/model_TED_w_backbone_const_timehet.Rev`, to run the **time heterogeneous** TED model. 
+
+
+**IMPORTANT NOTES**
+
+* If you are running multiple MCMCs we recommend to manually run them and modify the `output_extra  =` argument of each header file. Not changing this value will overwrite your results.
 
 
 ## R code 
