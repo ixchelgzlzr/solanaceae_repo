@@ -1,0 +1,52 @@
+#-------------------------------------------#
+#       THE MOLECULAR CLOCK MODEL           #
+# using an Uncorrelated Log Normal model    #
+#-------------------------------------------#
+
+# The molecular clock model describes the rate at which substitutions occur through time
+# We are using an uncorrelated relaxed Log Normal clock Model to allow branches 
+# to have different substitution rates, all of them drawn from 
+# a shared log-normal distribution
+
+# The parameters we need are:
+# - mole_branch_rates 
+# - mole_branch_rate_mean
+
+
+# draw the clock mean such as its log distribution is uniform
+mole_clock_rate_mean ~ dnLoguniform(1e-10, 1e1)
+moves.append( mvScale(mole_clock_rate_mean, weight = 10) )
+# In the first runs, some chains started at a very high rate and caused 
+# extant clades to be very young, and then extinct clades can't get mixed in.
+# so I am gonna start the chain in a sensitive value
+mole_clock_rate_mean.setValue(0.002)
+
+
+# draw the standard deviation from an exponential
+mole_clock_rate_sd ~ dnExponential(abs(1 / H))
+# same for the sd, I am gonna start it in a sensitive value
+mole_clock_rate_sd.setValue(0.8)
+moves.append( mvScale(mole_clock_rate_sd, weight = 10) )
+
+# the branch-specific rates
+for(i in 1:nbranch) {
+
+  # draw the log of the rate
+     # the mean in the log scale is ln(mole_clock_rate_mean) - mole_clock_rate_sd * mole_clock_rate_sd -thanks algebra!
+  mole_branch_rates[i] ~ dnLognormal(ln(mole_clock_rate_mean) - mole_clock_rate_sd * mole_clock_rate_sd * 0.5, mole_clock_rate_sd) ### 
+  moves.append( mvScale(mole_branch_rates[i]) )
+
+}
+
+
+# lets calculate now the mean of the branch rate
+mole_branch_rate_mean := mean(mole_branch_rates)
+
+# make the moves
+
+# add branch rates to joint scale move on tree
+moves[tree_scale_move_index].addVariable(mole_branch_rates, up=true)
+moves[tree_scale_move_index].addVariable(mole_clock_rate_mean, up=true)
+#moves[tree_scale_move_index].addVariable(mole_clock_rate_sd, up=true)
+
+

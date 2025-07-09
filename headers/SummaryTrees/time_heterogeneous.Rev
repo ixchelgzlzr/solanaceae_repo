@@ -1,0 +1,16 @@
+##################
+# Summary trees  #
+##################
+
+
+# Path to combined traces
+path = "output/final_runs/time_heterogeneous/"
+
+# output filename
+output_path  = "output/final_runs/time_heterogeneous/"
+output_extra = "_thetero"
+
+# source the template file
+source("modules/analysis/summary_trees.Rev")
+
+q()

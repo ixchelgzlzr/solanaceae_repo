@@ -1,0 +1,46 @@
+# CONSTANT RATE DIVERSIFICATION MODEL
+# REQUIRED: lambda, mu (both one per time interval)
+
+lambda_global ~ dnExponential(10)
+lambda_global.setValue(0.26)
+moves.append( mvSlide(lambda_global, weight = 1.0) )
+
+#adding another move
+moves.append( mvSlice(lambda_global, weight = 1.0) )
+
+mu_global ~ dnExponential(10)
+mu_global.setValue(0.2)
+moves.append( mvSlide(mu_global, weight = 1.0) )
+
+#adding another move
+moves.append( mvSlice(mu_global, weight = 10.0) )
+
+lambda := rep(lambda_global, num_bins + 1)
+mu     := rep(mu_global, num_bins + 1)
+
+diversification := lambda_global - mu_global
+relext := mu_global / lambda_global
+
+# # empirical prior on the diversification rate we will us
+diversification_prior_mean <- ln(total_taxa) / origin_time
+diversification_prior_sd   <- H
+
+# joint move on diversification rates
+up_down_lambda_mu = mvUpDownScale()
+up_down_lambda_mu.addVariable(lambda_global, up = true)
+up_down_lambda_mu.addVariable(mu_global, up = true)
+moves.append( up_down_lambda_mu )
+
+# # the diversification rate
+# diversification ~ dnLognormal( ln(diversification_prior_mean) - diversification_prior_sd * diversification_prior_sd * 0.5, diversification_prior_sd)
+# moves.append( mvScale(diversification, weight = 1.0) )
+# diversification.setValue(0.5)
+
+# # the relative extinction rate
+# relext ~ dnUniform(0, 1)
+# moves.append( mvSlide(relext, weight = 1.0) )
+# relext.setValue(0.99)
+
+# # transform to real parameters
+# lambda := rep(abs(diversification / (1 - relext)), num_bins + 1)
+# mu     := abs(lambda * relext)

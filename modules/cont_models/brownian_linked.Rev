@@ -1,0 +1,57 @@
+#----------------------------------------------------------------#
+# THE LINKED MORPHOLOGICAL CLOCK MODEL                                  #
+# Let's use a model that links morphology and molecular clocks   #
+#----------------------------------------------------------------#
+# num of cont traits
+num_cont_traits <- contData.nchar()
+
+#--------
+# NOTE: The rate for a given character on a given branch depends on branchRates and siteRates.
+# If both have a scale, then it is a problem because then you can scale one up and 
+# the other down and not change the likelihood (they are unidentifiable)
+# therefore only one can have an absolute rate
+# So I am going to make siteRates to have a mean of 1
+#--------
+
+# I am using a  Brownian motion model that
+# usually has a single parameter sigma square, but in this case I want each
+# character to have its own rates
+
+# get a vector of rates
+prop_rates ~ dnDirichlet(rep(1, num_cont_traits))
+# move on prop_rates
+moves.append( mvBetaSimplex(prop_rates, weight = 1.0))
+
+# get the relative rates with mean 1
+rel_rates := prop_rates * num_cont_traits
+
+# draw the clock mean such as its log distribution is uniform
+cont_clock_rate_mean ~ dnLoguniform(1e-10, 1e1)
+moves.append( mvScale(cont_clock_rate_mean, weight = 10) )
+cont_clock_rate_mean.setValue(0.01)
+
+
+# the branch-specific rates
+# LINKED to the morphological clock
+#cont_branch_rates := cont_clock_rate_mean * morph_branch_rates / morph_branch_rate_mean
+
+
+# LINKED  to the molecular clock
+cont_branch_rates := cont_clock_rate_mean * mole_branch_rates / mole_branch_rate_mean
+
+
+
+# specify that we are going calculate BM likelihood using the REML PIC algorithm (see Felsenstein 1973) 
+cont_traits ~ dnPhyloBrownianREML(timetree, branchRates = cont_branch_rates^0.5, siteRates = rel_rates, nSites = num_cont_traits)
+cont_traits.clamp(contData) #match traits to tips
+
+# add continuous rate mean to the scaling move
+moves[tree_scale_move_index].addVariable(cont_clock_rate_mean, up=true)
+
+
+
+
+
+
+
+

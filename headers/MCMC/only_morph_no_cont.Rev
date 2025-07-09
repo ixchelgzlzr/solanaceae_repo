@@ -1,0 +1,37 @@
+################################
+# Continuos + discrete morph + molecular
+# No time divergence
+# Objective: to check fossil placement based on morphology to decide on morphological constraints
+# for time-divergence analysis
+#################################
+
+
+# the data directory
+data_dir = "data_no_seeds/"
+
+# tree model
+#diversification_model = "constant"
+#fossilization_model   = "constant"
+
+# molecular model
+#mole_clock_model = "UCLN"
+#substn_model     = "GTR_G"
+
+# morphological model
+#morph_clock_model = "linked"
+morph_model       = "Mk_G"
+
+
+# the type of analysis
+analysis = "MCMC_uniform"
+
+# the output directory
+output_dir      = "output_only_morph_no_cont/no_seeds/"
+output_extra    = "_2"
+output_filename = output_dir + "_morphQ_" + morph_model +
+                              "_" + analysis + output_extra + "/"
+
+# source the template file
+source("modules/template_only_morph_no_cont.Rev")
+
+q()

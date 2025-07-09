@@ -1,0 +1,55 @@
+# HETEROGENEOUS-RATE FOSSILIZATION MODEL
+# REQUIRED: psi (one per time interval)
+
+# # empirical prior on the diversification rate we will us
+diversification_prior_mean <- ln(total_taxa) / origin_time
+diversification_prior_sd   <- H
+
+# I am gonna try two ways to specify the fossilization rate
+# use one at the time
+
+#-------------
+# WAY 1: using an empirical prior as in the global rate set up
+
+# empirical hyperprior on the fossilization priors
+fossilization_prior_mean <- num_fossils * diversification_prior_mean / (exp(diversification_prior_mean * origin_time) - 1)
+fossilization_prior_sd   <- 2 * H
+
+# get fossilization_mean distribution
+fossilization_mean ~ dnLognormal(ln(fossilization_prior_mean) - fossilization_prior_sd * fossilization_prior_sd * 0.5, fossilization_prior_sd)
+
+# between epochs sd
+fossilization_sd ~ dnExponential(2)
+
+# add moves
+moves.append(mvSlide(fossilization_mean, weight = 5))
+moves.append(mvSlide(fossilization_sd,   weight = 5))
+
+# get rates for each interval
+for (i in 1:(num_bins + 1)){
+    psi[i] ~ dnLognormal(ln(fossilization_mean) - 0.5 * fossilization_sd * fossilization_sd, fossilization_sd)
+    moves.append(mvScale(psi[i]))
+}
+
+
+# #-------------
+
+# # WAY 2:  getting the mean from an exponential
+
+# # draw mean and sd from exp distribution
+# fossilization_mean ~ dnExponential(10)
+# fossilization_sd   ~ dnExponential(2)
+
+# #-------------
+
+# # add moves
+# moves.append(mvSlide(fossilization_mean, weight = 5))
+# moves.append(mvSlide(fossilization_sd, weight = 5))
+
+# # get rates for each time interval
+# # remember we transform the mean to the log scale to use dnLog normal
+# for (i in 1:(num_bins + 1)){
+#     psi[i] ~ dnLognormal(ln(fossilization_mean) - 0.5 * fossilization_sd * fossilization_sd, fossilization_sd)
+#     moves.append(mvScale(psi[i]))
+# }
+

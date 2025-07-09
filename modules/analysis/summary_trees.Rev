@@ -1,0 +1,15 @@
+##########################################
+# Make summary trees for combined traces #
+##########################################
+
+# make summary tree
+full_trees   = readTreeTrace(path + "trees_combined.trees", "clock")
+extant_trees = readTreeTrace(path + "extant_trees_combined.trees", "clock")
+
+# make summary mccs
+mccTree(full_trees,   output_path + "MCC_tree" + output_extra + ".tre", conditionalAges = FALSE)
+mccTree(extant_trees, output_path + "MCC_extant_tree" + output_extra + ".tre", conditionalAges = FALSE)
+
+# make summary maps
+#mapTree(full_trees,   output_path + "MAP_tree" + output_extra + ".tre")
+#mapTree(extant_trees, output_path + "MAP_extant_tree" + output_extra + ".tre", conditionalAges = FALSE)

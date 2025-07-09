@@ -1,0 +1,126 @@
+########################
+# Template file for a non divergence time anylisis
+#######################
+
+# moves container
+moves = VectorMoves()
+
+# monitors vector
+monitors = VectorMonitors()
+
+# convenient constants
+H = ln(10) / (qnorm(0.975) - qnorm(0.025))
+
+
+################
+# loading data #
+################
+
+# read the morphological data
+morphdata = readDiscreteCharacterData(data_dir +  "morphology.nexus")
+
+
+# read the taxon data
+taxa = readTaxonData(data_dir + "Ages.txt", delimiter=TAB)
+ntax = taxa.size()
+nbranch = 2 * ntax - 3
+
+# count the number of fossils
+num_fossils = 0
+for(i in 1:taxa.size()) {
+  if (taxa[i].getMinAge() != 0) {
+    num_fossils = num_fossils + 1
+  }
+}
+
+
+# add missing taxa to the morphological data
+morphdata.addMissingTaxa(taxa)
+
+
+# partition morphological data by number of states
+n_max_states = 7  # consider changing this for your own data, if necessary
+
+
+  # start a counter
+idx = 0
+
+  # for each number of character states
+for (i in 2:n_max_states) {
+
+    # make a tempory character alignment
+    morph_tmp <- morphdata
+
+    # retain characters with i states
+    morph_tmp.setNumStatesPartition(i)
+
+    # if there are more than zero characters with this many states...
+    # store the data partition
+    if ( morph_tmp.nchar() > 0 ) {
+        morph_partitions[++idx] = morph_tmp
+        nc[idx] = i
+    }
+}
+
+# compute the number of morphological partitions
+num_morph_parts = morph_partitions.size()
+
+
+# read in the timescale
+timescale = readDataDelimitedFile(data_dir + "epoch_timescale.csv", header = true, delimiter=",")
+num_bins  = timescale.size()
+for(i in 1:num_bins) {
+    breakpoints[i] <- timescale[i][2]
+}
+
+
+"read all data..."
+
+#############################
+# specifying the tree model #
+#############################
+
+# first we specify some dataset-specific parameters
+extant_taxa = 133    # total number of extant taxa in the tree
+total_taxa  = 2800    # total number of extant taxa in the group
+rho <- extant_taxa/total_taxa   # sampling fraction
+
+
+# get the tree distribution
+tree ~ dnUniformTopologyBranchLength(taxa, branchLengthDistribution=dnExponential(10))
+
+# add some moves
+moves.append( mvNNI(tree, weight=nbranch ) )
+moves.append( mvSPR(tree, weight=nbranch ) )
+moves.append( mvBranchLengthScale(tree, weight=nbranch) )
+
+
+# keep track of the tree length
+Tl := tree.treeLength()
+
+
+#################################################
+# specifying the morphological transition model #
+#################################################
+
+source("modules/morph_evol_models/" + morph_model + ".Rev")
+
+# Make the CTMC for morphological data
+
+# no scaler cause it is only morphology
+
+for (i in 1:morph_Q.size()){
+  morph[i] ~ dnPhyloCTMC(tree, morph_Q[i], siteRates = morph_site_rates, coding  = "variable", type = "Standard")
+  morph[i].clamp ( morph_partitions[i] )
+}
+
+
+
+####################
+# running analysis #
+####################
+
+source("modules/analysis/" + analysis + ".Rev")
+
+
+#q()

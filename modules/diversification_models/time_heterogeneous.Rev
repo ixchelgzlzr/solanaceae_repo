@@ -1,0 +1,60 @@
+# VARIABLE RATES DIVERSIFICATION MODEL
+# REQUIRED: lambda, mu (both one per time interval)
+
+
+# set lambda hiperprior as a lognormal distribution
+# with mean and sd inferred
+
+# draw mean and sd from exp distribution
+lambda_mean ~ dnExponential(10)
+lambda_sd   ~ dnExponential(2)
+
+# add moves
+moves.append(mvScale(lambda_mean, weight = 3.0))
+moves.append(mvScale(lambda_sd, weight = 3.0))
+
+# get rates for each time interval
+# remember we transform the mean to the log scale to use dnLog normal
+for (i in 1:(num_bins + 1)){
+    lambda[i] ~ dnLognormal(ln(lambda_mean) - 0.5 * lambda_sd * lambda_sd, lambda_sd)
+    moves.append(mvScale(lambda[i]))
+}
+
+
+
+# now the extinction rate
+
+# set mu hiperpriors to come from a lognormal distribution
+# draw mean and sd from exp distribution
+mu_mean ~ dnExponential(10)
+mu_sd   ~ dnExponential(2)
+
+# add moves
+moves.append(mvScale(mu_mean, weight = 4.0))
+moves.append(mvScale(mu_sd, weight = 4.0))
+
+# get rates for each time interval
+# remember we transform the mean to the log scale to use dnLog normal
+for (i in 1:(num_bins + 1)){
+    mu[i] ~ dnLognormal(ln(mu_mean) - 0.5 * mu_sd * mu_sd, mu_sd)
+    moves.append(mvScale(mu[i] , weight = 4.0))
+}
+
+
+# add a joint move on lambda and mu per each time period
+for (i in 1:(num_bins + 1)){
+    moves.append( mvUpDownScale( ) )
+    moves_index  <- moves.size()
+    moves[moves_index].addVariable(mu[i], up = true)
+    moves[moves_index].addVariable(lambda[i], up = true)
+}
+
+"joint move was added"
+
+# get the diversification and relative extinction rates
+for (i in 1:(num_bins + 1) ){
+    diversification[i] := lambda[i] - mu[i]
+    relext[i] := mu[i] / lambda[i]
+}
+
+

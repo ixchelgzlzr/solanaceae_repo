@@ -1,0 +1,17 @@
+# the clade Physalis is monophyletic
+clade_Physalis = clade (
+    "f_Physalis_hunickenii",
+    "f_Physalis_infinemundi",
+	"Physalis_angulata",
+	"Physalis_peruviana"
+)
+
+
+# the clade Hyoscyamus is monophyletic
+clade_Hyoscyamus = clade (
+    "H4895_Hyoscyamus_undulatus",
+    "Hyoscyamus_niger"
+)
+
+
+constraints = v(clade_Physalis, clade_Hyoscyamus)

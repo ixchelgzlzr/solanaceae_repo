@@ -1,0 +1,179 @@
+#NEXUS
+[written Tue Jul 30 14:42:14 MDT 2024 by Mesquite  version 3.61 (build 927) at EBIO-FAC-L-083.local/192.168.0.7]
+
+BEGIN TAXA;
+	TITLE Taxa;
+	DIMENSIONS NTAX=148;
+	TAXLABELS
+		f_Eophysaloides_inflata f_Lycianthoides_calycina f_Physalis_hunickenii f_Physalis_infinemundi UF6500_Nephrosemen_reticulatus V_40891_Solanispermum_reniforme V_40898_Solanum_arnense CCN6065_second_seed_Capsicum_pliocenicum H4895_Hyoscyamus_undulatus K453A_Hyoscyamus_datureoides K528_Solanum_miocenicus K530_Solanoides_dorofeevii K587B_Solanum_foveolatum 2003_0073_Nicotianosemen_minuta Alkekengi_officinarum Anisodus_tanguticus Anthocercis_intricata Anthotroche_pannosa Archiphysalis_chamaesarachoides Athenaea_brasiliana Athenaea_cuspidata Atropa_belladonna Atropanthe_sinensis Benthamiella_patagonica Bouchetia_anomala Brachistus_nelsonii Browallia_americana Brugmansia_suaveolens Brunfelsia_australis Calibrachoa_humilis Calliphysalis_carpenteri Capsicophysalis_potosina Capsicum_chacoense Cestrum_bracteatum Chamaesaracha_arida Coeloneurum_ferrugineum Combera_paradoxa Crenidium_spinescens Cuatresia_harlingiana Cyphanthera_anthocercidea Darcyanthus_spruceanus Datura_ferox Deprea_pauciflora Deprea_abra_patriciae Discopodium_penninervium Duboisia_myoporoides Duckeodendron_cestroides Dunalia_brachyacantha Dyssochroma_viridiflorum Eriolarynx_australis Espadaea_amoena Exodeconus_miersii Fabiana_imbricata Goetzea_elegans Grammosolen_dixonii Hawkesiophyton_panamense Heteranthia_decipiens Hunzikeria_texana Hyoscyamus_niger Iochroma_cyaneum Jaborosa_laciniata Jaltomata_bicolor Jaltomata_grandiflora Juanulloa_mexicana Latua_pubiflora Leptoglossis_darcyana Leucophysalis_grandiflora Lycianthes_rantonnetii Lycianthes_acapulcensis Lycium_americanum Mandragora_officinarum Markea_coccinea Melananthus_guatemalensis Mellissia_begoniifolia Merinthopodium_neuranthum Metternichia_princeps Nectouxia_formosa Nicandra_physalodes Nicotiana_wigandioides Nierembergia_linariifolia Nolana_divaricata Nothocestrum_latifolium Oryctes_nevadensis Pantacantha_ameghinoi Petunia_interior Physaliastrum_heterophyllum Physalis_peruviana Physalis_angulata Physochlaina_orientalis Plowmania_nyctaginoides Protoschwenkia_mandonii Przewalskia_tangutica Quincula_lobata Reyesia_chilensis Salpichroa_tristis Salpiglossis_sinuata Saracha_quitensis Schizanthus_grahamii Schraderanthus_viscosus Schultesianthus_leucanthus Schwenckia_americana Sclerophylax_spinescens Scopolia_carniolica Sessea_stipulata Solandra_grandiflora Solanum_annuum Solanum_barbisetum Solanum_caripense Solanum_corymbosum Solanum_crinitum Solanum_crispum Solanum_evolvulifolium Solanum_evolvuloides Solanum_herculeum Solanum_hieronymi Solanum_jamaicense Solanum_laciniatum Solanum_mahoriense Solanum_microdontum Solanum_montanum Solanum_oedipus Solanum_palustre Solanum_peruvianum Solanum_polygamum Solanum_salamancae Solanum_sejunctum Solanum_sinuatirecurvum Solanum_sisymbriifolium Solanum_terminale Solanum_thelopodium Solanum_torvum Solanum_trizygum Solanum_uncinellum Solanum_valdiviense Solanum_weddellii Solanum_pimpinellifolium Solanum_pinnatum Streptosolen_jamesonii Symonanthus_aromaticus Trompettia_cardenasiana Trozelia_umbellata Tsoala_tubiflora Tubocapsicum_anomalum Tzeltalia_amphitricha Vassobia_breviflora Vestia_foetida Withania_somnifera Witheringia_solanacea 
+	;
+
+END;
+
+
+BEGIN CHARACTERS;
+	TITLE  Continuous;
+	DIMENSIONS  NCHAR=8;
+	FORMAT DATATYPE = CONTINUOUS GAP = - MISSING = ?;
+CHARSTATELABELS 
+		1 seed_length,
+		2 seed_ratio,
+		3 fruiting_calyx_LT,
+		4 fruiting_calyx_ratio,
+		5 calyx_lobe_LT,
+		6 calyx_LT_lobe_ratio,
+		7 fruiting_pedicel,
+		8 fruit_ratio ; 
+	MATRIX
+	f_Eophysaloides_inflata                  ? ? 10.8 1.27 2.0 5.4 5.22 1.94
+	f_Lycianthoides_calycina                 ? ? 2.73 0.93 0.0 ? ? ?
+	f_Physalis_hunickenii                    ? ? 29.2 1.61 8.5 3.44 18.5 ?
+	f_Physalis_infinemundi                   ? ? 25.2 1.91 7.9 3.19 18.8 1.0
+	UF6500_Nephrosemen_reticulatus           3.268 1.218039508 ? ? ? ? ? ?
+	V_40891_Solanispermum_reniforme          3.653 1.202831742 ? ? ? ? ? ?
+	V_40898_Solanum_arnense                  2.659 1.133418585 ? ? ? ? ? ?
+	CCN6065_second_seed_Capsicum_pliocenicum 1.529 1.058864266 ? ? ? ? ? ?
+	H4895_Hyoscyamus_undulatus               1.13 1.086538462 ? ? ? ? ? ?
+	K453A_Hyoscyamus_datureoides             1.71 1.11038961 ? ? ? ? ? ?
+	K528_Solanum_miocenicus                  1.31 1.408602151 ? ? ? ? ? ?
+	K530_Solanoides_dorofeevii               1.63 1.325203252 ? ? ? ? ? ?
+	K587B_Solanum_foveolatum                 1.98 1.137931034 ? ? ? ? ? ?
+	2003_0073_Nicotianosemen_minuta          2.194 1.42560104 ? ? ? ? ? ?
+	Alkekengi_officinarum                    1.95 1.15 50.75 1.99 6.48 7.83 33.0 1.0
+	Anisodus_tanguticus                      2.65 1.33 67.5 2.25 16.0 4.22 75.0 1.26
+	Anthocercis_intricata                    1.7 2.13 2.2 0.92 1.9 1.16 6.5 3.37
+	Anthotroche_pannosa                      2.4 2.18 5.5 0.61 3.0 1.83 1.0 2.0
+	Archiphysalis_chamaesarachoides          1.55 1.28 16.0 1.33 1.5 10.67 18.5 1.11
+	Athenaea_brasiliana                      3.2 1.21 2.2 0.46 1.7 1.13 18.0 0.99
+	Athenaea_cuspidata                       2.9 1.16 20.5 0.98 19.5 1.05 29.5 1.17
+	Atropa_belladonna                        1.8 1.64 24.0 0.83 15.0 1.6 23.0 0.97
+	Atropanthe_sinensis                      2.7 1.08 33.5 1.2 10.0 3.35 23.0 1.0
+	Benthamiella_patagonica                  1.6 1.33 4.25 1.85 1.25 3.4 1.5 1.2
+	Bouchetia_anomala                        0.8 1.14 9.5 1.73 4.25 2.24 17.0 1.89
+	Brachistus_nelsonii                      1.2 1.09 11.0 0.92 6.0 1.83 32.5 1.0
+	Browallia_americana                      0.9 1.13 9.0 2.0 3.25 2.77 4.0 1.57
+	Brugmansia_suaveolens                    8.5 1.55 87.5 3.98 29.5 2.97 31.0 2.92
+	Brunfelsia_australis                     9.0 1.5 12.5 1.04 9.0 1.39 6.5 1.25
+	Calibrachoa_humilis                      1.35 1.35 11.5 1.64 6.5 1.77 13.0 1.47
+	Calliphysalis_carpenteri                 1.35 1.23 15.5 1.15 3.6 4.31 7.0 0.84
+	Capsicophysalis_potosina                 1.3 0.96 10.0 1.0 4.5 2.22 27.5 1.0
+	Capsicum_chacoense                       3.7 1.28 1.3 0.3 0.7 0.8 13.4 1.4
+	Cestrum_bracteatum                       3.5 1.4 3.0 0.67 1.25 2.4 0.0 1.0
+	Chamaesaracha_arida                      2.1 1.11 6.0 0.87 1.8 3.33 14.5 1.13
+	Coeloneurum_ferrugineum                  7.0 1.0 2.0 0.57 2.0 1.0 3.5 1.0
+	Combera_paradoxa                         1.4 1.47 7.0 0.51 5.5 1.27 1.5 1.21
+	Crenidium_spinescens                     3.4 3.09 1.75 0.78 0.5 3.5 4.5 1.89
+	Cuatresia_harlingiana                    3.0 1.5 11.0 3.14 3.25 3.38 3.5 3.33
+	Cyphanthera_anthocercidea                2.8 2.8 4.25 0.94 3.3 1.29 4.5 0.94
+	Darcyanthus_spruceanus                   0.63 1.0 5.5 1.0 0.6 9.17 7.0 1.0
+	Datura_ferox                             3.27 1.13 4.25 0.27 4.75 0.89 16.0 1.0
+	Deprea_pauciflora                        2.3 1.1 18.1 1.39 2.15 8.42 9.25 1.21
+	Deprea_abra_patriciae                    2.2 1.02 10.5 0.68 2.5 4.2 8.5 1.24
+	Discopodium_penninervium                 2.6 1.18 3.5 0.72 0.2 17.5 12.5 1.0
+	Duboisia_myoporoides                     2.7 2.0 2.5 0.59 1.1 2.27 10.0 1.0
+	Duckeodendron_cestroides                 27.5 1.53 2.5 0.45 0.25 10.0 5.5 2.09
+	Dunalia_brachyacantha                    2.0 1.33 3.25 0.54 1.75 1.86 13.5 1.0
+	Dyssochroma_viridiflorum                 4.2 3.82 37.5 0.63 28.0 1.34 27.5 2.06
+	Eriolarynx_australis                     1.6 1.14 6.5 0.41 1.2 5.42 35.0 1.0
+	Espadaea_amoena                          4.94 1.27 3.25 0.59 2.15 1.51 4.5 1.19
+	Exodeconus_miersii                       1.85 1.21 9.0 1.2 5.6 1.61 11.0 1.0
+	Fabiana_imbricata                        1.3 2.6 2.5 0.89 0.6 4.17 0.4 2.0
+	Goetzea_elegans                          3.14 3.05 0.3 0.48 0.2 1.18 1.24 1.38
+	Grammosolen_dixonii                      2.5 2.08 3.0 0.69 2.0 1.5 0.4 0.94
+	Hawkesiophyton_panamense                 3.55 2.84 7.0 0.74 6.0 1.17 11.0 2.86
+	Heteranthia_decipiens                    0.66 1.35 3.5 0.78 2.0 1.75 2.5 1.16
+	Hunzikeria_texana                        1.15 1.77 11.0 1.38 1.75 6.29 9.5 1.29
+	Hyoscyamus_niger                         1.15 1.1 22.0 2.2 4.25 5.18 1.5 1.0
+	Iochroma_cyaneum                         1.2 1.33 9.0 0.82 2.0 4.5 18.0 1.21
+	Jaborosa_laciniata                       3.4 1.42 5.7 0.66 5.0 1.2 20.0 0.72
+	Jaltomata_bicolor                        1.67 1.0 11.0 0.35 8.8 1.25 23.0 0.6
+	Jaltomata_grandiflora                    1.73 1.18 12.65 0.51 6.8 1.86 13.0 0.65
+	Juanulloa_mexicana                       4.65 2.0 25.3 1.43 23.3 3.1 16.3 1.25
+	Latua_pubiflora                          1.85 1.06 13.5 1.29 5.0 2.7 12.5 1.0
+	Leptoglossis_darcyana                    0.4 1.33 7.0 3.11 4.75 1.47 7.5 2.33
+	Leucophysalis_grandiflora                1.65 1.14 20.0 1.25 5.5 3.64 14.0 0.88
+	Lycianthes_rantonnetii                   2.63 1.1 4.0 0.4 0.0 ? 15.0 1.05
+	Lycianthes_acapulcensis                  3.6 1.2 3.75 0.39 0.0 ? 55.0 2.24
+	Lycium_americanum                        1.65 1.32 4.5 0.95 1.25 3.6 6.5 1.29
+	Mandragora_officinarum                   5.0 1.11 14.0 1.0 9.0 1.56 30.0 0.92
+	Markea_coccinea                          3.0 2.73 36.0 0.65 30.0 1.2 21.0 1.91
+	Melananthus_guatemalensis                1.25 1.39 1.25 0.96 0.7 1.79 1.0 2.5
+	Mellissia_begoniifolia                   1.0 2.0 1.6 0.64 0.69 0.77 1.0 0.67
+	Merinthopodium_neuranthum                2.4 1.85 1.8 0.33 2.38 2.6 5.0 1.2
+	Metternichia_princeps                    34.5 12.55 15.0 2.14 8.0 1.88 6.0 5.33
+	Nectouxia_formosa                        2.15 1.26 28.5 2.19 28.0 1.02 25.0 3.33
+	Nicandra_physalodes                      1.75 1.35 28.0 1.04 2.3 12.17 25.0 1.0
+	Nicotiana_wigandioides                   0.48 1.5 8.81 1.4 2.1 4.2 6.65 1.07
+	Nierembergia_linariifolia                0.75 1.36 9.0 2.4 3.75 2.4 8.0 1.13
+	Nolana_divaricata                        1.6 1.52 3.0 0.5 1.25 2.4 11.0 0.5
+	Nothocestrum_latifolium                  2.15 1.08 5.0 0.91 2.8 1.79 11.0 1.0
+	Oryctes_nevadensis                       3.15 1.05 7.0 0.88 5.8 1.21 5.7 1.0
+	Pantacantha_ameghinoi                    2.0 1.82 13.5 2.45 9.0 1.5 1.5 1.36
+	Petunia_interior                         0.45 1.29 20.5 1.46 9.5 2.16 19.0 1.93
+	Physaliastrum_heterophyllum              2.4 1.2 22.5 1.18 8.0 2.81 30.75 0.86
+	Physalis_peruviana                       1.3 1.44 42.0 1.91 14.0 3.0 10.0 1.27
+	Physalis_angulata                        1.9 1.73 27.5 1.25 7.0 3.93 14.5 1.0
+	Physochlaina_orientalis                  3.05 1.3 17.5 1.67 3.0 5.83 10.5 1.16
+	Plowmania_nyctaginoides                  1.4 1.56 8.0 1.33 4.0 2.0 14.5 0.85
+	Protoschwenkia_mandonii                  0.95 1.06 4.5 1.06 2.1 2.14 6.5 0.94
+	Przewalskia_tangutica                    3.72 1.22 57.5 1.55 3.0 19.17 6.0 1.0
+	Quincula_lobata                          2.9 1.75 13.0 0.93 0.6 21.67 36.5 0.92
+	Reyesia_chilensis                        1.0 0.91 2.75 1.31 1.1 2.5 25.0 1.31
+	Salpichroa_tristis                       2.0 1.14 8.5 0.85 6.5 1.31 7.5 1.9
+	Salpiglossis_sinuata                     1.0 1.33 13.0 1.53 5.0 2.6 16.0 1.65
+	Saracha_quitensis                        3.65 1.4 4.25 0.4 2.4 1.77 14.0 1.0
+	Schizanthus_grahamii                     1.9 1.19 10.5 1.24 9.0 1.17 19.5 1.64
+	Schraderanthus_viscosus                  1.6 1.19 23.0 1.15 14.5 1.59 41.5 0.86
+	Schultesianthus_leucanthus               5.25 1.24 9.0 0.6 5.0 1.8 13.5 1.03
+	Schwenckia_americana                     0.7 1.17 2.25 0.5 2.1 1.07 4.5 1.0
+	Sclerophylax_spinescens                  3.0 3.0 6.6 1.74 4.0 1.65 0.0 0.75
+	Scopolia_carniolica                      2.8 1.56 14.0 1.4 6.7 2.09 27.5 1.0
+	Sessea_stipulata                         8.3 9.22 6.65 1.8 0.9 7.39 0.0 2.15
+	Solandra_grandiflora                     5.25 1.62 85.0 2.43 40.0 2.13 15.0 1.2
+	Solanum_annuum                           2.55 1.11 8.0 0.89 1.0 8.0 6.0 1.0
+	Solanum_barbisetum                       4.0 1.6 20.0 1.43 10.0 2.0 8.0 1.0
+	Solanum_caripense                        1.85 1.42 5.0 0.56 3.0 1.67 11.0 1.13
+	Solanum_corymbosum                       1.65 1.27 2.5 0.5 1.3 1.92 2.5 1.0
+	Solanum_crinitum                         2.65 1.33 21.0 0.5 22.0 0.95 11.0 1.0
+	Solanum_crispum                          2.5 1.43 1.1 0.29 0.4 0.27 13.0 1.0
+	Solanum_evolvulifolium                   1.75 1.0 2.25 0.5 1.5 1.5 12.5 1.31
+	Solanum_evolvuloides                     2.9 1.260869565 8.9 1.3 7.7 4.4 10.5 1.0
+	Solanum_herculeum                        7.0 1.0 12.0 1.0 12.0 1.0 17.5 1.0
+	Solanum_hieronymi                        1.9 0.9 11.0 0.73 12.0 0.92 16.93 1.23
+	Solanum_jamaicense                       1.25 1.67 6.5 0.81 9.0 0.72 9.0 1.0
+	Solanum_laciniatum                       2.5 1.0 3.5 0.5 2.5 1.4 25.0 1.29
+	Solanum_mahoriense                       4.0 1.14 52.5 1.27 5.5 9.55 12.5 1.0
+	Solanum_microdontum                      2.0 1.33 6.5 0.52 8.0 0.81 12.5 0.88
+	Solanum_montanum                         1.3 1.44 5.5 0.5 5.0 1.1 10.5 1.0
+	Solanum_oedipus                          4.25 1.0 2.25 1.13 2.5 0.9 20.0 1.0
+	Solanum_palustre                         2.0 1.33 2.65 0.48 5.5 0.48 13.5 1.0
+	Solanum_peruvianum                       2.4 2.0 12.0 0.86 14.0 0.86 17.5 1.0
+	Solanum_polygamum                        5.0 1.67 25.0 0.5 15.0 1.67 7.5 1.0
+	Solanum_salamancae                       2.25 1.29 12.0 1.2 5.0 2.4 14.5 1.08
+	Solanum_sejunctum                        2.5 1.0 28.0 1.17 10.0 2.8 7.0 1.0
+	Solanum_sinuatirecurvum                  3.25 1.3 8.0 0.55 4.5 1.78 20.5 1.0
+	Solanum_sisymbriifolium                  2.75 1.22 16.5 0.66 15.0 1.1 11.0 1.0
+	Solanum_terminale                        2.0 1.33 2.5 0.5 2.5 1.0 10.0 1.42
+	Solanum_thelopodium                      3.5 1.0 1.75 0.44 2.0 0.88 11.5 1.0
+	Solanum_torvum                           2.75 1.22 6.0 0.52 7.0 0.86 13.5 1.0
+	Solanum_trizygum                         3.0 1.33 2.0 0.5 1.0 2.0 17.5 1.68
+	Solanum_uncinellum                       5.0 1.43 1.25 0.5 1.5 0.83 15.0 1.0
+	Solanum_valdiviense                      3.0 1.5 2.25 0.5 1.5 1.5 17.5 1.0
+	Solanum_weddellii                        2.5 1.67 10.0 0.8 7.5 1.33 8.5 1.0
+	Solanum_pimpinellifolium                 2.5 2.17 11.0 0.51 12.0 0.92 17.5 1.0
+	Solanum_pinnatum                         1.45 0.85 4.0 0.5 3.0 1.33 10.5 1.0
+	Streptosolen_jamesonii                   1.21 1.53 12.5 2.38 3.5 3.57 18.5 0.95
+	Symonanthus_aromaticus                   1.9 1.73 2.8 0.75 1.5 1.87 2.5 1.0
+	Trompettia_cardenasiana                  3.65 1.13 7.2 0.96 4.0 1.8 5.5 1.0
+	Trozelia_umbellata                       1.7 1.01 7.0 0.58 4.0 1.75 31.0 1.57
+	Tsoala_tubiflora                         11.3 1.9 11.0 5.5 3.0 3.67 5.5 2.2
+	Tubocapsicum_anomalum                    2.0 1.11 2.5 0.83 0.0 ? 20.0 1.0
+	Tzeltalia_amphitricha                    1.75 1.0 55.0 1.57 4.4 12.5 24.0 1.0
+	Vassobia_breviflora                      1.95 1.15 2.0 0.5 1.0 2.0 25.5 1.0
+	Vestia_foetida                           2.9 1.45 10.0 0.59 3.3 3.03 12.0 1.92
+	Withania_somnifera                       2.15 1.05 13.5 1.13 3.5 3.86 3.0 1.0
+	Witheringia_solanacea                    2.33 1.2 2.45 0.38 0.0 ? 16.0 1.0
+
+;
+
+END;

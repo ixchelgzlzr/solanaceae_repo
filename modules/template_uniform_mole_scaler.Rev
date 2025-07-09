@@ -1,0 +1,206 @@
+########################
+# Template file for a non divergence time anylisis
+#######################
+
+# moves container
+moves = VectorMoves()
+
+# monitors vector
+monitors = VectorMonitors()
+
+# convenient constants
+H = ln(10) / (qnorm(0.975) - qnorm(0.025))
+
+
+################
+# loading data #
+################
+
+
+# read the sequence data
+  # get the files names
+markers = listFiles( data_dir + "alignments" )
+
+  # how many alignments
+naln = markers.size()
+
+    #read the alignments
+for(i in 1:naln) {
+    moledata[i] = readDiscreteCharacterData(markers[i]) 
+}
+
+
+# read the morphological data
+morphdata = readDiscreteCharacterData(data_dir +  "morphology.nexus")
+
+
+# read the continuous data
+continuous = data_dir + "continuous.nexus"
+contData   = readContinuousCharacterData(continuous)
+
+
+# read the taxon data
+taxa = readTaxonData(data_dir + "Ages.txt", delimiter=TAB)
+ntax = taxa.size()
+nbranch = 2 * ntax - 3
+
+# count the number of fossils
+num_fossils = 0
+for(i in 1:taxa.size()) {
+  if (taxa[i].getMinAge() != 0) {
+    num_fossils = num_fossils + 1
+  }
+}
+
+# add missing taxa to the sequence data
+for(i in 1:naln) {
+  x = moledata[i]
+  x.addMissingTaxa(taxa)
+  moledata[i] = x
+}
+
+# add missing taxa to the morphological data
+morphdata.addMissingTaxa(taxa)
+
+
+# partition morphological data by number of states
+n_max_states = 7  # consider changing this for your own data, if necessary
+
+
+  # start a counter
+idx = 0
+
+  # for each number of character states
+for (i in 2:n_max_states) {
+
+    # make a tempory character alignment
+    morph_tmp <- morphdata
+
+    # retain characters with i states
+    morph_tmp.setNumStatesPartition(i)
+
+    # if there are more than zero characters with this many states...
+    # store the data partition
+    if ( morph_tmp.nchar() > 0 ) {
+        morph_partitions[++idx] = morph_tmp
+        nc[idx] = i
+    }
+}
+
+# compute the number of morphological partitions
+num_morph_parts = morph_partitions.size()
+
+
+# read in the timescale
+timescale = readDataDelimitedFile(data_dir + "epoch_timescale.csv", header = true, delimiter=",")
+num_bins  = timescale.size()
+for(i in 1:num_bins) {
+    breakpoints[i] <- timescale[i][2]
+}
+
+# read the clade constraints
+#source(data_dir + "clade_constraints.Rev")
+
+"read all data..."
+
+#############################
+# specifying the tree model #
+#############################
+
+# first we specify some dataset-specific parameters
+extant_taxa = 133    # total number of extant taxa in the tree
+total_taxa  = 2800    # total number of extant taxa in the group
+rho <- extant_taxa/total_taxa   # sampling fraction
+
+
+
+# no need to set up an hyper prior
+# get a distribution of branchlengths
+# br_len_lambda  dnExp(0.2)
+# br_len_lambda.setValue(4)
+# moves.append( mvScale(br_len_lambda, weight=5) )
+
+
+# get the tree distribution
+tree ~ dnUniformTopologyBranchLength(taxa, branchLengthDistribution=dnExponential(10))
+
+# add some moves
+moves.append( mvNNI(tree, weight=nbranch ) )
+moves.append( mvSPR(tree, weight=nbranch ) )
+moves.append( mvBranchLengthScale(tree, weight=nbranch) )
+
+
+# keep track of the tree length
+Tl := tree.treeLength()
+
+# This parametrixzation might be more intutive to interpret, but the down side is the time
+# # get a prior on branch lengths from a dirichlet 
+# bl ~ dnDirichlet(rep(1, nbranch))
+
+#  # add some moves on the branch lengths
+# moves.append(mvBetaSimplex(bl, weight = nbranch))
+
+# # get a prior on topology
+# topology ~ dnUniformTopology(taxa)
+
+#  # some moves on the topology
+# moves.append(mvNNI(topology, weight=nbranch/2.0))
+# moves.append(mvSPR(topology, weight=nbranch/10.0))
+
+# # assemble the tree
+# tree := fnTreeAssembly(topology, bl)
+
+
+
+#####################################
+# specifying the substitution model #
+#####################################
+
+source("modules/mol_evol_models/" + substn_model + ".Rev")
+
+# make the CTMC for molecular data
+for(i in 1:naln) {
+  seq[i] ~ dnPhyloCTMC(tree, mole_Q[i], siteRates = mole_site_rates[i] * mole_relative_rates[i])
+  seq[i].clamp( moledata[i] )
+}
+
+
+#################################################
+# specifying the morphological transition model #
+#################################################
+
+source("modules/morph_evol_models/" + morph_model + ".Rev")
+
+# Make the CTMC for morphological data
+
+# average scaler for morph in relation to molecular rates
+# Maybe I am forcing morph rates to be too low on the unrooted analysis
+# will I get  toplogies consistent to TED if I use this scaler? / are morph rates too low on my unrooted tree?
+# morph_mole_scaler ~ dnLognormal(1, 1)
+# Perhaps better to use more intuitive Exp. LogNormal can be informative in mysterious ways
+morph_mole_scaler ~ dnExponential(1)
+morph_mole_scaler.setValue(0.7) # from first few runs
+
+# add moves to this prior
+moves.append( mvScale(morph_mole_scaler, weight=4) )
+
+for (i in 1:morph_Q.size()){
+  morph[i] ~ dnPhyloCTMC(tree, morph_Q[i], siteRates = morph_site_rates * morph_mole_scaler, coding  = "variable", type = "Standard")
+  morph[i].clamp ( morph_partitions[i] )
+}
+
+####################################################
+# specifying the continuous traits model #
+####################################################
+
+source("modules/cont_models/" + cont_model + ".Rev")
+
+
+####################
+# running analysis #
+####################
+
+source("modules/analysis/" + analysis + ".Rev")
+
+
+#q()

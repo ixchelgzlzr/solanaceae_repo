@@ -1,0 +1,188 @@
+#NEXUS
+[written Tue Jul 30 14:42:14 MDT 2024 by Mesquite  version 3.61 (build 927) at EBIO-FAC-L-083.local/192.168.0.7]
+
+BEGIN TAXA;
+	TITLE Taxa;
+	DIMENSIONS NTAX=148;
+	TAXLABELS
+		f_Eophysaloides_inflata f_Lycianthoides_calycina f_Physalis_hunickenii f_Physalis_infinemundi UF6500_Nephrosemen_reticulatus V_40891_Solanispermum_reniforme V_40898_Solanum_arnense CCN6065_second_seed_Capsicum_pliocenicum H4895_Hyoscyamus_undulatus K453A_Hyoscyamus_datureoides K528_Solanum_miocenicus K530_Solanoides_dorofeevii K587B_Solanum_foveolatum 2003_0073_Nicotianosemen_minuta Alkekengi_officinarum Anisodus_tanguticus Anthocercis_intricata Anthotroche_pannosa Archiphysalis_chamaesarachoides Athenaea_brasiliana Athenaea_cuspidata Atropa_belladonna Atropanthe_sinensis Benthamiella_patagonica Bouchetia_anomala Brachistus_nelsonii Browallia_americana Brugmansia_suaveolens Brunfelsia_australis Calibrachoa_humilis Calliphysalis_carpenteri Capsicophysalis_potosina Capsicum_chacoense Cestrum_bracteatum Chamaesaracha_arida Coeloneurum_ferrugineum Combera_paradoxa Crenidium_spinescens Cuatresia_harlingiana Cyphanthera_anthocercidea Darcyanthus_spruceanus Datura_ferox Deprea_pauciflora Deprea_abra_patriciae Discopodium_penninervium Duboisia_myoporoides Duckeodendron_cestroides Dunalia_brachyacantha Dyssochroma_viridiflorum Eriolarynx_australis Espadaea_amoena Exodeconus_miersii Fabiana_imbricata Goetzea_elegans Grammosolen_dixonii Hawkesiophyton_panamense Heteranthia_decipiens Hunzikeria_texana Hyoscyamus_niger Iochroma_cyaneum Jaborosa_laciniata Jaltomata_bicolor Jaltomata_grandiflora Juanulloa_mexicana Latua_pubiflora Leptoglossis_darcyana Leucophysalis_grandiflora Lycianthes_rantonnetii Lycianthes_acapulcensis Lycium_americanum Mandragora_officinarum Markea_coccinea Melananthus_guatemalensis Mellissia_begoniifolia Merinthopodium_neuranthum Metternichia_princeps Nectouxia_formosa Nicandra_physalodes Nicotiana_wigandioides Nierembergia_linariifolia Nolana_divaricata Nothocestrum_latifolium Oryctes_nevadensis Pantacantha_ameghinoi Petunia_interior Physaliastrum_heterophyllum Physalis_peruviana Physalis_angulata Physochlaina_orientalis Plowmania_nyctaginoides Protoschwenkia_mandonii Przewalskia_tangutica Quincula_lobata Reyesia_chilensis Salpichroa_tristis Salpiglossis_sinuata Saracha_quitensis Schizanthus_grahamii Schraderanthus_viscosus Schultesianthus_leucanthus Schwenckia_americana Sclerophylax_spinescens Scopolia_carniolica Sessea_stipulata Solandra_grandiflora Solanum_annuum Solanum_barbisetum Solanum_caripense Solanum_corymbosum Solanum_crinitum Solanum_crispum Solanum_evolvulifolium Solanum_evolvuloides Solanum_herculeum Solanum_hieronymi Solanum_jamaicense Solanum_laciniatum Solanum_mahoriense Solanum_microdontum Solanum_montanum Solanum_oedipus Solanum_palustre Solanum_peruvianum Solanum_polygamum Solanum_salamancae Solanum_sejunctum Solanum_sinuatirecurvum Solanum_sisymbriifolium Solanum_terminale Solanum_thelopodium Solanum_torvum Solanum_trizygum Solanum_uncinellum Solanum_valdiviense Solanum_weddellii Solanum_pimpinellifolium Solanum_pinnatum Streptosolen_jamesonii Symonanthus_aromaticus Trompettia_cardenasiana Trozelia_umbellata Tsoala_tubiflora Tubocapsicum_anomalum Tzeltalia_amphitricha Vassobia_breviflora Vestia_foetida Withania_somnifera Witheringia_solanacea 
+	;
+
+END;
+
+
+BEGIN CHARACTERS;
+	TITLE  Discrete;
+	DIMENSIONS  NCHAR=17;
+	FORMAT DATATYPE = STANDARD RESPECTCASE GAP = - MISSING = ? SYMBOLS = "  0 1 2 3 4 5 6 7 8 9";
+	CHARSTATELABELS 
+		1 compression /  flattened not_flattened,
+		2 hilum_position /  lateral terminal,
+		3 embryo /  curved straight coiled,
+		4 cavity /  absent present,
+		5 testal_walls /  straight sinuate,
+		6 wings /  absent present,
+		7 elaiosomes /  absent present,
+		8 base_invaginated /  absent present,
+		9 angled /  absent present,
+		10 lobe_sinus /  rounded angular absent,
+		11 widest_veins /  absent present,
+		12 secondary_veins /  absent present,
+		13 secondary_veins_fork /  absent present,
+		14 fruit_type /  berry capsule diclesium/mericarp drupe non-capsular dehiscent pyxidium,
+		15 calyx_inflated /  absent present,
+		16 venation_pattern /  parallelodromus other,
+		17 calyx_teeth /  absent present ; 
+	MATRIX
+	f_Eophysaloides_inflata                 ???????0011110110
+	f_Lycianthoides_calycina                ???????002000?011
+	f_Physalis_hunickenii                   ???????11111?0110
+	f_Physalis_infinemundi                  ???????1111110110
+	UF6500_Nephrosemen_reticulatus          10?1000??????????
+	V_40891_Solanispermum_reniforme         00?1000??????????
+	V_40898_Solanum_arnense                 10?1100??????????
+	CCN6065_second_seed_Capsicum_pliocenicum 00?0000??????????
+	H4895_Hyoscyamus_undulatus              01?0100??????????
+	K453A_Hyoscyamus_datureoides            00?1101??????????
+	K528_Solanum_miocenicus                 00??100??????????
+	K530_Solanoides_dorofeevii              00?0100??????????
+	K587B_Solanum_foveolatum                00?1100??????????
+	2003_0073_Nicotianosemen_minuta         01?0000??????????
+	Alkekengi_officinarum                   00011001111110110
+	Anisodus_tanguticus                     01?01000001115110
+	Anthocercis_intricata                   10100000001001010
+	Anthotroche_pannosa                     10100000011001010
+	Archiphysalis_chamaesarachoides         00001000111110110
+	Athenaea_brasiliana                     000?0000010000010
+	Athenaea_cuspidata                      00000000011100110
+	Atropa_belladonna                       01201000011100010
+	Atropanthe_sinensis                     10200000011115110
+	Benthamiella_patagonica                 10011000011001010
+	Bouchetia_anomala                       10100000001111010
+	Brachistus_nelsonii                     00000000011110110
+	Browallia_americana                     10101000011111010
+	Brugmansia_suaveolens                   00001000011000000
+	Brunfelsia_australis                    10100000011001000
+	Calibrachoa_humilis                     10100000011111010
+	Calliphysalis_carpenteri                00?01000011110110
+	Capsicophysalis_potosina                00001000011100010
+	Capsicum_chacoense                      00211000021100011
+	Cestrum_bracteatum                      10100000011000010
+	Chamaesaracha_arida                     00200000001000010
+	Coeloneurum_ferrugineum                 10101000001003010
+	Combera_paradoxa                        10000000011101010
+	Crenidium_spinescens                    10100000000001010
+	Cuatresia_harlingiana                   00011000001000010
+	Cyphanthera_anthocercidea               10100000001001010
+	Darcyanthus_spruceanus                  00001000001100010
+	Datura_ferox                            00211010011001000
+	Deprea_pauciflora                       00001001111110110
+	Deprea_abra_patriciae                   00011000111100110
+	Discopodium_penninervium                00011000000000010
+	Duboisia_myoporoides                    10110001001000010
+	Duckeodendron_cestroides                10001000000003010
+	Dunalia_brachyacantha                   00001000011000010
+	Dyssochroma_viridiflorum                10101000011100010
+	Eriolarynx_australis                    00011000011000010
+	Espadaea_amoena                         10100000011003010
+	Exodeconus_miersii                      00011000011004010
+	Fabiana_imbricata                       10100000011001010
+	Goetzea_elegans                         11101000011003010
+	Grammosolen_dixonii                     10100000011001010
+	Hawkesiophyton_panamense                10100000001100010
+	Heteranthia_decipiens                   10101000011001010
+	Hunzikeria_texana                       10001000011111010
+	Hyoscyamus_niger                        01201000011115010
+	Iochroma_cyaneum                        00001000011000010
+	Jaborosa_laciniata                      00011000011100010
+	Jaltomata_bicolor                       00011000011000010
+	Jaltomata_grandiflora                   00011000011000010
+	Juanulloa_mexicana                      10001000111000010
+	Latua_pubiflora                         10000000011000010
+	Leptoglossis_darcyana                   10100000001001010
+	Leucophysalis_grandiflora               00200000011110010
+	Lycianthes_rantonnetii                  01201000020000011
+	Lycianthes_acapulcensis                 10201000020000011
+	Lycium_americanum                       00011000011000010
+	Mandragora_officinarum                  01210000001100010
+	Markea_coccinea                         10101000011100010
+	Melananthus_guatemalensis               10100000011001010
+	Mellissia_begoniifolia                  00?10000001000010
+	Merinthopodium_neuranthum               10101000011000010
+	Metternichia_princeps                   11100000001111010
+	Nectouxia_formosa                       00210000011000010
+	Nicandra_physalodes                     00200001111100110
+	Nicotiana_wigandioides                  10111000011001010
+	Nierembergia_linariifolia               11100000011111010
+	Nolana_divaricata                       10001000000002010
+	Nothocestrum_latifolium                 00200000011100010
+	Oryctes_nevadensis                      00210100011104010
+	Pantacantha_ameghinoi                   10011000011001010
+	Petunia_interior                        11100000011101010
+	Physaliastrum_heterophyllum             00001000011100010
+	Physalis_peruviana                      00001001111110110
+	Physalis_angulata                       00201001111110110
+	Physochlaina_orientalis                 01211000011115110
+	Plowmania_nyctaginoides                 10100000011111010
+	Protoschwenkia_mandonii                 10001000011001010
+	Przewalskia_tangutica                   01011000011115110
+	Quincula_lobata                         00210001111100110
+	Reyesia_chilensis                       10210000011111010
+	Salpichroa_tristis                      00211000011000010
+	Salpiglossis_sinuata                    10201000001111010
+	Saracha_quitensis                       00010000011000010
+	Schizanthus_grahamii                    10011000011101010
+	Schraderanthus_viscosus                 00000000011100110
+	Schultesianthus_leucanthus              10011000010000010
+	Schwenckia_americana                    10100000011101010
+	Sclerophylax_spinescens                 10111000011002010
+	Scopolia_carniolica                     01001000001115010
+	Sessea_stipulata                        00100100011001010
+	Solandra_grandiflora                    00010000011000010
+	Solanum_annuum                          01211000011000110
+	Solanum_barbisetum                      00211000010000010
+	Solanum_caripense                       01210000011000010
+	Solanum_corymbosum                      00211000010000010
+	Solanum_crinitum                        00211000011000010
+	Solanum_crispum                         002??000010000010
+	Solanum_evolvulifolium                  01211000010000010
+	Solanum_evolvuloides                    0021?100010000010
+	Solanum_herculeum                       00210000011000010
+	Solanum_hieronymi                       00200001001000010
+	Solanum_jamaicense                      00211000010000010
+	Solanum_laciniatum                      00211000010000010
+	Solanum_mahoriense                      0021?001010100110
+	Solanum_microdontum                     01210000010000010
+	Solanum_montanum                        00210000010000010
+	Solanum_oedipus                         00211000010000010
+	Solanum_palustre                        01210000010000010
+	Solanum_peruvianum                      01211000010000010
+	Solanum_polygamum                       00211000001000010
+	Solanum_salamancae                      01211001111100110
+	Solanum_sejunctum                       00210000010000010
+	Solanum_sinuatirecurvum                 01211000011000010
+	Solanum_sisymbriifolium                 00211000111000010
+	Solanum_terminale                       00210000010000010
+	Solanum_thelopodium                     00211000010000010
+	Solanum_torvum                          00211000011000010
+	Solanum_trizygum                        00211000011000010
+	Solanum_uncinellum                      00211000011000010
+	Solanum_valdiviense                     00211000011100010
+	Solanum_weddellii                       00210001001100110
+	Solanum_pimpinellifolium                01201000011000010
+	Solanum_pinnatum                        00200000011000010
+	Streptosolen_jamesonii                  10100000011111010
+	Symonanthus_aromaticus                  10100000011001010
+	Trompettia_cardenasiana                 10001000011000000
+	Trozelia_umbellata                      00010000011110010
+	Tsoala_tubiflora                        10?01000011001010
+	Tubocapsicum_anomalum                   00010000020000010
+	Tzeltalia_amphitricha                   00011000111110110
+	Vassobia_breviflora                     00001000011000010
+	Vestia_foetida                          10100000011001010
+	Withania_somnifera                      00011001111110110
+	Witheringia_solanacea                   00000000020000010
+
+;
+
+END;

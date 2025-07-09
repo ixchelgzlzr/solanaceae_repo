@@ -1,0 +1,49 @@
+#----------------------------------------------------------------#
+# Continuous traits unlinked with morph
+# There is a global rate for cont traits, 
+# but we allow variation among cont traits
+#----------------------------------------------------------------#
+# num of cont traits
+num_cont_traits <- contData.nchar()
+
+#--------
+# NOTE: The rate for a given character on a given branch depends on branchRates and siteRates.
+# If both have a scale, then it is a problem because then you can scale one up and 
+# the other down and not change the likelihood (they are unidentifiable)
+# therefore only one can have an absolute rate
+# So I am going to make siteRates to have a mean of 1
+#--------
+
+# I am using a  Brownian motion model that
+# usually has a single parameter sigma square, but in this case I want each
+# character to have its own rates
+
+# get a vector of rates
+prop_rates ~ dnDirichlet(rep(1, num_cont_traits))
+# move on prop_rates
+moves.append( mvBetaSimplex(prop_rates, weight = 3.0))
+
+# get the relative rates with mean 1
+rel_rates := prop_rates * num_cont_traits
+
+
+# add a scaler for cont_traits
+cont_mole_scaler ~ dnExponential(1)
+
+# add moves to this prior
+moves.append( mvScale(cont_mole_scaler, weight=4) )
+
+
+# we don't need scalers because we don't have molecular
+# specify that we are going calculate BM likelihood using the REML PIC algorithm (see Felsenstein 1973) 
+cont_traits ~ dnPhyloBrownianREML(tree, siteRates = rel_rates * cont_mole_scaler, nSites = num_cont_traits)
+cont_traits.clamp(contData) #match traits to tips
+
+
+
+
+
+
+
+
+

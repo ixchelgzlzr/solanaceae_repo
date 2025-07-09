@@ -1,0 +1,22 @@
+#-------------------------------------------#
+# THE MK + G MORPHOLOGICAL EVOLUTION MODEL  #
+#-------------------------------------------#
+
+# The parameters we need are:
+# morph_Q  ( one per mixture category ), categories
+# morph_site_rates
+
+# for each morphological partition
+for (i in 1:num_morph_parts) {
+    morph_Q[i] <- fnJC(nc[i])
+}
+
+# Specifying the gamma parameter
+num_rate_cats_morph = 4
+
+morph_site_rate_alpha ~ dnUniform(0, 10)
+moves.append( mvScale(morph_site_rate_alpha) )
+
+morph_site_rates := fnDiscretizeGamma(morph_site_rate_alpha, morph_site_rate_alpha, num_rate_cats_morph)
+
+

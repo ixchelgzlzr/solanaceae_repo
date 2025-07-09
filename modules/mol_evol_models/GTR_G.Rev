@@ -1,0 +1,50 @@
+#-------------------------------#
+# THE MOLECULAR EVOLUTION MODEL #
+# using a GTR + Gamma model     #
+#-------------------------------#
+
+# The molecular evolution model describes how nucleotide sequences change through time
+# The parameters we need are:
+# - Q_mole per partition
+# - mole_site_rates per partition
+# - mole_relative_rates per partition
+
+
+# Q matrix per partition
+
+for (i in 1:naln) {
+  # the stationary frequency
+  mole_pi[i] ~ dnDirichlet(rep(1,4))
+  moves.append( mvBetaSimplex(mole_pi[i], weight = 1.0) )
+
+  # the exchangeability rates
+  mole_kappa[i] ~ dnDirichlet(rep(1,6))
+  moves.append( mvBetaSimplex(mole_kappa[i], weight = 1.0))
+
+  # create the Q matrices
+  mole_Q[i] := fnGTR(mole_kappa[i], mole_pi[i])
+
+  # the site rates drawn from a gamma distribution
+  alpha[i] ~ dnExponential( 1.0 )
+  alpha[i].setValue(10) #trying set the value high to avoid getting trapped
+  moves.append( mvScale(alpha[i], lambda=0.01, weight=0.3) )
+  moves.append( mvScale(alpha[i], lambda=0.1,  weight=0.3) )
+  moves.append( mvScale(alpha[i], lambda=1,    weight=0.3) ) 
+  mole_site_rates[i] := fnDiscretizeGamma( alpha[i], alpha[i], 4)
+}
+
+
+# we allow different markers evolve at different rates
+# relative-rate multipliers
+mole_proportional_rates ~ dnDirichlet(rep(1, naln))
+moves.append( mvBetaSimplex(mole_proportional_rates, weight = naln) )
+
+# rescale the rates so the mean is 1
+mole_relative_rates := abs(mole_proportional_rates * naln) 
+
+# # length per partition for when using dirichlet on branch lengths:
+# for (i in 1:naln){
+#   mole_relative_rates[i] ~ dnExponential(1)
+#   moves.append( mvScale( mole_relative_rates[i], weight = 1) )
+# }
+
