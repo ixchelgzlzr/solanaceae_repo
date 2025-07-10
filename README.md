@@ -8,9 +8,12 @@ This repository contains the data and the code necessary to replicate the result
 
 ## Data
 
+All the data necessary for the analyses are in this folder. The folder `alignments/` has the 10 markers used. The file `Ages.txt` has a list of all the tips with their min and max age. For extant species, this are both 0, while for fossils these intervals represent the stratigraphic uncertainty of the fossils. The file `clade_constraints.Rev` contains the definition of the two clade constraints, and the file `R_backbone_from_sampled_3_tips.tree` contains the three tips backbone used for the TED analyses. The files `continuous.nexus` and `morphology.nexus` contain the continuous and categorical morphological data respectively. Finally, `epoch_timescale.csv` defines the time intervals in which rates are allowed to vary for the time-heterogeneous TED analysis.
+
+**Important note:** The names of some tips were updated by the time we had concluded our analyses. We use the correspondence table `conversion_table.csv` to update the names in the final figures.
 
 ## Phylogenetic analyses
-All the phylogenetic analyses are set up to be run from the root of this directory calling RevBayes from the command line, e.g. `rb path/to/analysis/header.rev`. We will indicate below the command to run each analysis. The code is written in a modular way, check the `modules/` folder to see all the different variants of each model component and these different model components are called by template files. If you want to replicate our analyses in your own computer, all you have to do is to modify the `header` files. In these, you can specify the director for your output path by specifying `output_dir` and `output_extra`.
+All the phylogenetic analyses are set up to be run from the root of this directory calling RevBayes from the command line, e.g. `rb path/to/analysis/header.rev`. We will indicate below the command to run each analysis. The code is written in a modular way, check the `modules/` folder to see all the different variants of each model component and these different model components are called by template files. If you want to replicate our analyses in your own computer, all you have to do is to modify the `headers/` files. In these, you can specify the director for your output path by specifying `output_dir` and `output_extra`.
 
 
 ```
