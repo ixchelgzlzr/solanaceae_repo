@@ -1,2 +1,12 @@
 .DS_Store
 history.txt
+
+output/final_runs/**/*.trees
+output/final_runs/**/*.log
+
+
+output/final_runs/*/*.trees
+output/final_runs/*/*.log
+
+output/final_runs/*/*/*.trees
+output/final_runs/*/*/*.log
