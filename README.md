@@ -1,6 +1,8 @@
 # Data and code for the paper "Late Cretaceous origins for major nightshade lineages from total evidence timetree analysis"
 #### Ixchel González Ramírez, Rocío Deanna, and Stacey D. Smith
 
+Pre-print available at: 
+
 ***
 
 This repository contains the data and the code necessary to replicate the results and figures of this paper. The respitory contains both RevBayes and R code. Below are details on the organization og the files and instructions to run the analyses.
@@ -88,11 +90,13 @@ Progress:
 
 ## R code 
 
+This repository includes an R project and all the R scripts are in the folder `\R_scripts`. All the R scripts are commented so they are self explanatory. Below a brief explanation of the files.
 
-### Assessing convergence
-
-
-### 'One-fossil at a time' posterior samples inspection
+* `RWTY.R` - This script assesses convergence of traces obtaine dunder the same model. Particularly useful for assessing topological convergence.
+* `combine_traces.R` - this script takes various traces of the same analysis and combines them.
+* `trim_unstable_fossils.R` - this script was used to trim the unstable fossils in every tree of the traces, to then recompute the MCC tree in rb. 
+* `/one_fossil_att`  - In this folder there are the scripts to produce trees and sistergroup PP distributions for one-fossil at the time.
+* `/figures` - This folder contains various scripts to produce figures like the ones presented in the manuscript.
 
 
 
