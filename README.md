@@ -45,7 +45,37 @@ To run the total evidence dating analyses to infer both divergence times and phy
 **IMPORTANT NOTES**
 
 * If you are running multiple MCMCs we recommend to manually run them and modify the `output_extra  =` argument of each header file. Not changing this value will overwrite your results.
+* We discovered a back end bug in rb. When the first drawn tree has -inf probability, and rb tries to get a new starting tree it misrepresents the age of fossils. While hopefully this will be fixed soon, the workaround for now is **to stop the analysis `ctrl +C` and restart until the analysis finds a good starting tree in the first attempt**. To be more specific, if you see in screen something like the chunk below, you need to stop and re-start.
 
+```
+Processing of file "modules/morph_evol_models/Mk_G.Rev" completed
+   Processing file "modules/cont_models/brownian_unlinked_global.Rev"
+   Processing of file "modules/cont_models/brownian_unlinked_global.Rev" completed
+   Processing file "modules/analysis/MCMC_long.Rev"
+   Could not compute lnProb for node 'timetree': lnProb = -inf
+   (((Brunfelsia_australis[&index=148]:9.906192,Anisod...
+   
+   
+   Drawing new initial states ... 
+   Could not compute lnProb for node 'timetree': lnProb = -inf
+   (((((H4895_Hyoscyamus_undulatus[&index=148]:36.9771...
+```  
+If the first attempt to get a tree was succesful, you will see something like this:
+
+```
+   Processing of file "modules/morph_evol_models/Mk_G.Rev" completed
+   Processing file "modules/cont_models/brownian_unlinked_global.Rev"
+   Processing of file "modules/cont_models/brownian_unlinked_global.Rev" completed
+   Processing file "modules/analysis/MCMC_long.Rev"
+   
+   Running burn-in phase of Monte Carlo sampler for 200 iterations.
+   This simulation runs 1 independent replicate.
+   The simulator uses 381 different moves in a random move schedule with 4358.6 moves per iteration
+   
+
+Progress:
+0---------------25---------------50---------------75--------------100
+```
 
 ## R code 
 
