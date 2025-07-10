@@ -98,6 +98,8 @@ This repository includes an R project and all the R scripts are in the folder `\
 * `/one_fossil_att`  - In this folder there are the scripts to produce trees and sistergroup PP distributions for one-fossil at the time.
 * `/figures` - This folder contains various scripts to produce figures like the ones presented in the manuscript.
 
+Finally, within the `R_scripts/traits_ASR/` folder, there are scripts and the data necessary to conduct all the ASR for continuous and categorical traits that we present in the manuscript. 
+
 
 
 
