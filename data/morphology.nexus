@@ -29,7 +29,7 @@ BEGIN CHARACTERS;
 		11 widest_veins /  absent present,
 		12 secondary_veins /  absent present,
 		13 secondary_veins_fork /  absent present,
-		14 fruit_type /  berry capsule diclesium/mericarp drupe non-capsular dehiscent pyxidium,
+		14 fruit_type /  berry capsule diclesium/mericarp drupe non-capsular_dehiscent pyxidium,
 		15 calyx_inflated /  absent present,
 		16 venation_pattern /  parallelodromus other,
 		17 calyx_teeth /  absent present ; 
