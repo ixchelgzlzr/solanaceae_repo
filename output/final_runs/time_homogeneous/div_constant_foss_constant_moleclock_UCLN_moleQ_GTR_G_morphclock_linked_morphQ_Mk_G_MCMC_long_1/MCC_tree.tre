@@ -1,0 +1,251 @@
+#NEXUS
+begin taxa;
+	dimensions ntax=148;
+	taxlabels
+	2003_0073_Nicotianosemen_minuta
+	Alkekengi_officinarum
+	Anisodus_tanguticus
+	Anthocercis_intricata
+	Anthotroche_pannosa
+	Archiphysalis_chamaesarachoides
+	Athenaea_brasiliana
+	Athenaea_cuspidata
+	Atropa_belladonna
+	Atropanthe_sinensis
+	Benthamiella_patagonica
+	Bouchetia_anomala
+	Brachistus_nelsonii
+	Browallia_americana
+	Brugmansia_suaveolens
+	Brunfelsia_australis
+	CCN6065_second_seed_Capsicum_pliocenicum
+	Calibrachoa_humilis
+	Calliphysalis_carpenteri
+	Capsicophysalis_potosina
+	Capsicum_chacoense
+	Cestrum_bracteatum
+	Chamaesaracha_arida
+	Coeloneurum_ferrugineum
+	Combera_paradoxa
+	Crenidium_spinescens
+	Cuatresia_harlingiana
+	Cyphanthera_anthocercidea
+	Darcyanthus_spruceanus
+	Datura_ferox
+	Deprea_abra_patriciae
+	Deprea_pauciflora
+	Discopodium_penninervium
+	Duboisia_myoporoides
+	Duckeodendron_cestroides
+	Dunalia_brachyacantha
+	Dyssochroma_viridiflorum
+	Eriolarynx_australis
+	Espadaea_amoena
+	Exodeconus_miersii
+	Fabiana_imbricata
+	Goetzea_elegans
+	Grammosolen_dixonii
+	H4895_Hyoscyamus_undulatus
+	Hawkesiophyton_panamense
+	Heteranthia_decipiens
+	Hunzikeria_texana
+	Hyoscyamus_niger
+	Iochroma_cyaneum
+	Jaborosa_laciniata
+	Jaltomata_bicolor
+	Jaltomata_grandiflora
+	Juanulloa_mexicana
+	K453A_Hyoscyamus_datureoides
+	K528_Solanum_miocenicus
+	K530_Solanoides_dorofeevii
+	K587B_Solanum_foveolatum
+	Latua_pubiflora
+	Leptoglossis_darcyana
+	Leucophysalis_grandiflora
+	Lycianthes_acapulcensis
+	Lycianthes_rantonnetii
+	Lycium_americanum
+	Mandragora_officinarum
+	Markea_coccinea
+	Melananthus_guatemalensis
+	Mellissia_begoniifolia
+	Merinthopodium_neuranthum
+	Metternichia_princeps
+	Nectouxia_formosa
+	Nicandra_physalodes
+	Nicotiana_wigandioides
+	Nierembergia_linariifolia
+	Nolana_divaricata
+	Nothocestrum_latifolium
+	Oryctes_nevadensis
+	Pantacantha_ameghinoi
+	Petunia_interior
+	Physaliastrum_heterophyllum
+	Physalis_angulata
+	Physalis_peruviana
+	Physochlaina_orientalis
+	Plowmania_nyctaginoides
+	Protoschwenkia_mandonii
+	Przewalskia_tangutica
+	Quincula_lobata
+	Reyesia_chilensis
+	Salpichroa_tristis
+	Salpiglossis_sinuata
+	Saracha_quitensis
+	Schizanthus_grahamii
+	Schraderanthus_viscosus
+	Schultesianthus_leucanthus
+	Schwenckia_americana
+	Sclerophylax_spinescens
+	Scopolia_carniolica
+	Sessea_stipulata
+	Solandra_grandiflora
+	Solanum_annuum
+	Solanum_barbisetum
+	Solanum_caripense
+	Solanum_corymbosum
+	Solanum_crinitum
+	Solanum_crispum
+	Solanum_evolvulifolium
+	Solanum_evolvuloides
+	Solanum_herculeum
+	Solanum_hieronymi
+	Solanum_jamaicense
+	Solanum_laciniatum
+	Solanum_mahoriense
+	Solanum_microdontum
+	Solanum_montanum
+	Solanum_oedipus
+	Solanum_palustre
+	Solanum_peruvianum
+	Solanum_pimpinellifolium
+	Solanum_pinnatum
+	Solanum_polygamum
+	Solanum_salamancae
+	Solanum_sejunctum
+	Solanum_sinuatirecurvum
+	Solanum_sisymbriifolium
+	Solanum_terminale
+	Solanum_thelopodium
+	Solanum_torvum
+	Solanum_trizygum
+	Solanum_uncinellum
+	Solanum_valdiviense
+	Solanum_weddellii
+	Streptosolen_jamesonii
+	Symonanthus_aromaticus
+	Trompettia_cardenasiana
+	Trozelia_umbellata
+	Tsoala_tubiflora
+	Tubocapsicum_anomalum
+	Tzeltalia_amphitricha
+	UF6500_Nephrosemen_reticulatus
+	V_40891_Solanispermum_reniforme
+	V_40898_Solanum_arnense
+	Vassobia_breviflora
+	Vestia_foetida
+	Withania_somnifera
+	Witheringia_solanacea
+	f_Eophysaloides_inflata
+	f_Lycianthoides_calycina
+	f_Physalis_hunickenii
+	f_Physalis_infinemundi
+;
+end;
+
+begin trees;
+	tree TREE1 = [&R] (((((((((((((((((((((((Solanum_mahoriense[&index=83]:15.124172,Solanum_sejunctum[&index=82]:15.124172)[&index=149,posterior=0.624594,age_95%_HPD={10.0309,21.0309}]:1.861641,Solanum_oedipus[&index=84]:16.985813)[&index=150,posterior=0.737566,age_95%_HPD={12.0508,22.387}]:1.266707,Solanum_barbisetum[&index=81]:18.25252)[&index=151,posterior=0.789303,age_95%_HPD={13.0905,23.5841}]:0.680394,V_40891_Solanispermum_reniforme[&index=68,sampled_ancestor=0.065484,age_95%_HPD={0.047452,2.46705}]:17.669276)[&index=152,posterior=0.187203,age_95%_HPD={14.2476,24.9005}]:3.553598,Solanum_hieronymi[&index=85]:22.486512)[&index=153,posterior=0.209948,age_95%_HPD={17.2081,28.6889}]:2.926382,(Solanum_jamaicense[&index=80]:17.766792,Solanum_torvum[&index=79]:17.766792)[&index=154,posterior=0.96101,age_95%_HPD={8.16864,26.7343}]:7.646102)[&index=155,posterior=0.189453,age_95%_HPD={18.8983,31.9451}]:2.573062,Solanum_sisymbriifolium[&index=78]:27.985956)[&index=156,posterior=0.171707,age_95%_HPD={21.82,35.1104}]:2.276887,Solanum_crinitum[&index=77]:30.262843)[&index=157,posterior=0.172457,age_95%_HPD={25.0899,37.6132}]:3.970536,Solanum_polygamum[&index=86]:34.23338)[&index=158,posterior=0.175456,age_95%_HPD={28.4173,40.7293}]:-0.590593,K587B_Solanum_foveolatum[&index=127,sampled_ancestor=0.291177,age_95%_HPD={23.0367,27.5599}]:8.246595)[&index=159,posterior=0.030742,age_95%_HPD={28.7554,40.3643}]:6.773779,Solanum_evolvuloides[&index=76]:40.416566)[&index=160,posterior=0.045239,age_95%_HPD={34.5713,46.2307}]:5.240397,(((((((Solanum_annuum[&index=57]:13.230594,Solanum_sinuatirecurvum[&index=59]:13.230594)[&index=161,posterior=0.027243,age_95%_HPD={7.72335,20.5238}]:1.975305,Solanum_salamancae[&index=56]:15.205899)[&index=162,posterior=0.568108,age_95%_HPD={8.06539,22.6023}]:4.030003,Solanum_weddellii[&index=55]:19.235902)[&index=163,posterior=0.924769,age_95%_HPD={11.4685,27.5706}]:5.036565,Solanum_corymbosum[&index=58]:24.272467)[&index=164,posterior=0.928268,age_95%_HPD={15.5765,33.3317}]:6.975399,(Solanum_crispum[&index=61]:16.500856,Solanum_uncinellum[&index=62]:16.500856)[&index=165,posterior=0.978755,age_95%_HPD={5.24929,26.4013}]:14.74701)[&index=166,posterior=0.604849,age_95%_HPD={21.6364,39.6699}]:3.926592,((Solanum_herculeum[&index=65]:26.694611,Solanum_laciniatum[&index=64]:26.694611)[&index=167,posterior=0.662334,age_95%_HPD={17.155,35.8011}]:2.477036,(Solanum_terminale[&index=63]:22.817069,Solanum_valdiviense[&index=60]:22.817069)[&index=168,posterior=0.765809,age_95%_HPD={12.2572,33.0988}]:6.354579)[&index=169,posterior=0.84004,age_95%_HPD={19.1103,38.1011}]:6.002809)[&index=170,posterior=0.666583,age_95%_HPD={25.5111,43.3729}]:5.811922,(((((Solanum_microdontum[&index=74]:13.443489,Solanum_palustre[&index=71]:13.443489)[&index=171,posterior=0.537116,age_95%_HPD={7.00468,20.7822}]:2.630137,(Solanum_peruvianum[&index=72]:3.920122,Solanum_pimpinellifolium[&index=73]:3.920122)[&index=172,posterior=1.0,age_95%_HPD={1.15655,7.31857}]:12.153503)[&index=173,posterior=0.939265,age_95%_HPD={9.2366,23.6997}]:8.608828,Solanum_caripense[&index=75]:24.682454)[&index=174,posterior=0.860035,age_95%_HPD={15.3562,33.8788}]:6.840087,(Solanum_evolvulifolium[&index=70]:15.464596,Solanum_trizygum[&index=69]:15.464596)[&index=175,posterior=0.972257,age_95%_HPD={5.00923,25.9287}]:16.057944)[&index=176,posterior=0.755811,age_95%_HPD={21.9,39.6301}]:5.533613,(Solanum_montanum[&index=67]:8.002928,Solanum_pinnatum[&index=66]:8.002928)[&index=177,posterior=0.938765,age_95%_HPD={1.97364,17.5631}]:29.053226)[&index=178,posterior=0.653087,age_95%_HPD={27.9411,44.7383}]:3.930226)[&index=179,posterior=0.421395,age_95%_HPD={34.1386,48.8673}]:4.670583)[&index=180,posterior=0.084979,age_95%_HPD={37.8295,51.8763}]:7.430684,Solanum_thelopodium[&index=54]:53.087647)[&index=181,posterior=0.08098,age_95%_HPD={44.0408,60.2934}]:6.600848,((Jaltomata_bicolor[&index=53]:8.35202,Jaltomata_grandiflora[&index=52]:8.35202)[&index=182,posterior=0.997501,age_95%_HPD={2.0207,17.1451}]:37.751451,K530_Solanoides_dorofeevii[&index=129,sampled_ancestor=0.243939,age_95%_HPD={28.0035,33.6988}]:15.365871)[&index=183,posterior=0.006748,age_95%_HPD={34.5536,61.6595}]:13.585024)[&index=184,posterior=0.018995,age_95%_HPD={54.0717,67.2026}]:11.848592,(((((((((((((Physalis_angulata[&index=103]:20.461708,Physalis_peruviana[&index=104]:20.461708)[&index=185,posterior=1.0,age_95%_HPD={8.64804,32.6017}]:31.74013,f_Physalis_hunickenii[&index=105,sampled_ancestor=0.444889]:0.0)[&index=186,posterior=0.444889,age_95%_HPD={52.0005,52.4089}]:1.41526,f_Physalis_infinemundi[&index=102,sampled_ancestor=0.294926,age_95%_HPD={52.0039,52.4114}]:1.412566)[&index=187,posterior=1.0,age_95%_HPD={52.6335,54.9802}]:1.038084,(Chamaesaracha_arida[&index=113]:45.539009,Quincula_lobata[&index=114]:45.539009)[&index=188,posterior=0.729068,age_95%_HPD={35.0148,54.2256}]:9.116173)[&index=189,posterior=0.716571,age_95%_HPD={52.8829,56.6091}]:2.016873,((Alkekengi_officinarum[&index=117]:39.614597,Calliphysalis_carpenteri[&index=116]:39.614597)[&index=190,posterior=0.659835,age_95%_HPD={28.0622,51.536}]:8.876998,Capsicophysalis_potosina[&index=115]:48.491595)[&index=191,posterior=0.584354,age_95%_HPD={37.9774,56.7023}]:8.18046)[&index=192,posterior=0.40015,age_95%_HPD={54.4764,59.546}]:1.163037,Leucophysalis_grandiflora[&index=107]:57.835092)[&index=193,posterior=0.290177,age_95%_HPD={55.1631,60.7041}]:0.661477,(((Brachistus_nelsonii[&index=109]:20.128285,Witheringia_solanacea[&index=110]:20.128285)[&index=194,posterior=0.951512,age_95%_HPD={7.70265,35.487}]:26.30604,(Schraderanthus_viscosus[&index=111]:39.222069,Tzeltalia_amphitricha[&index=112]:39.222069)[&index=195,posterior=0.929018,age_95%_HPD={24.1108,52.5045}]:7.212255)[&index=196,posterior=0.827793,age_95%_HPD={33.3161,58.4553}]:8.84721,(Oryctes_nevadensis[&index=106]:37.700299,f_Eophysaloides_inflata[&index=87,sampled_ancestor=0.213697]:0.0)[&index=197,posterior=0.015746,age_95%_HPD={33.9233,42.0108}]:17.581236)[&index=198,posterior=0.051737,age_95%_HPD={49.1704,59.8216}]:3.215034)[&index=199,posterior=0.063984,age_95%_HPD={56.3333,60.8927}]:1.836427,Physaliastrum_heterophyllum[&index=101]:60.332996)[&index=200,posterior=0.052987,age_95%_HPD={57.8489,62.6934}]:2.433374,((((Archiphysalis_chamaesarachoides[&index=120]:25.519502,Tubocapsicum_anomalum[&index=121]:25.519502)[&index=201,posterior=0.608598,age_95%_HPD={10.3339,39.9464}]:4.664948,Nothocestrum_latifolium[&index=119]:30.18445)[&index=202,posterior=0.791302,age_95%_HPD={18.5664,43.022}]:6.687189,Discopodium_penninervium[&index=118]:36.871639)[&index=203,posterior=0.608098,age_95%_HPD={25.1716,50.8787}]:6.51072,(Mellissia_begoniifolia[&index=124]:25.661868,Withania_somnifera[&index=123]:25.661868)[&index=204,posterior=0.836041,age_95%_HPD={10.8291,40.6202}]:17.720492)[&index=205,posterior=0.533367,age_95%_HPD={31.9592,57.2323}]:19.38401)[&index=206,posterior=0.020995,age_95%_HPD={59.9491,65.6391}]:3.583867,(((((Eriolarynx_australis[&index=98]:5.466273,Vassobia_breviflora[&index=99]:5.466273)[&index=207,posterior=0.687328,age_95%_HPD={2.50527,8.68161}]:2.177578,Iochroma_cyaneum[&index=97]:7.643852)[&index=208,posterior=0.991502,age_95%_HPD={4.37833,11.2115}]:2.331669,Saracha_quitensis[&index=100]:9.97552)[&index=209,posterior=0.949513,age_95%_HPD={5.62641,14.3682}]:2.59125,Dunalia_brachyacantha[&index=96]:12.56677)[&index=210,posterior=0.931767,age_95%_HPD={7.25486,17.9485}]:5.376117,Trozelia_umbellata[&index=95]:17.942887)[&index=211,posterior=0.890027,age_95%_HPD={10.7553,25.8649}]:48.40735)[&index=212,posterior=0.022494,age_95%_HPD={60.7422,70.5101}]:1.40365,(((((Deprea_abra_patriciae[&index=94]:18.488913,Deprea_pauciflora[&index=93]:18.488913)[&index=213,posterior=0.44014,age_95%_HPD={6.2007,35.1036}]:5.026167,Darcyanthus_spruceanus[&index=92]:23.515079)[&index=214,posterior=0.805049,age_95%_HPD={9.15114,39.9972}]:11.785958,CCN6065_second_seed_Capsicum_pliocenicum[&index=122,sampled_ancestor=0.184204,age_95%_HPD={2.58728,5.1563}]:31.391933)[&index=215,posterior=0.018745,age_95%_HPD={24.4176,45.1634}]:14.779877,(Athenaea_brasiliana[&index=90]:23.162754,Athenaea_cuspidata[&index=89]:23.162754)[&index=216,posterior=0.933767,age_95%_HPD={11.8832,35.8383}]:26.918159)[&index=217,posterior=0.03874,age_95%_HPD={40.2746,59.5162}]:8.69137,Cuatresia_harlingiana[&index=88]:58.772284)[&index=218,posterior=0.037241,age_95%_HPD={49.8956,65.9746}]:8.981603)[&index=219,posterior=0.036741,age_95%_HPD={63.0407,73.5365}]:1.274554,(((Lycianthes_acapulcensis[&index=132]:38.206782,Lycianthes_rantonnetii[&index=131]:38.206782)[&index=220,posterior=0.824044,age_95%_HPD={23.5889,51.3719}]:12.188422,f_Lycianthoides_calycina[&index=128,sampled_ancestor=0.533117]:0.0)[&index=221,posterior=0.258185,age_95%_HPD={49.5121,51.3511}]:6.937983,(Capsicum_chacoense[&index=130]:32.976896,K528_Solanum_miocenicus[&index=91,sampled_ancestor=0.244939,age_95%_HPD={5.38373,21.9056}]:19.520715)[&index=222,posterior=0.049738,age_95%_HPD={13.7087,50.3539}]:24.356291)[&index=223,posterior=0.051737,age_95%_HPD={51.1401,63.0536}]:11.695254)[&index=224,posterior=0.002499,age_95%_HPD={66.5094,72.1619}]:0.464912,(Nectouxia_formosa[&index=125]:45.231528,Salpichroa_tristis[&index=126]:45.231528)[&index=225,posterior=0.785804,age_95%_HPD={29.3913,58.7113}]:24.261825)[&index=226,posterior=0.031742,age_95%_HPD={66.5188,75.7061}]:2.043734)[&index=227,posterior=0.130717,age_95%_HPD={65.5058,76.248}]:2.042829,(((Datura_ferox[&index=50]:18.759357,K453A_Hyoscyamus_datureoides[&index=12,sampled_ancestor=0.003499,age_95%_HPD={0.015907,2.437}]:17.488962)[&index=228,posterior=0.617346,age_95%_HPD={1.84114,43.9995}]:41.13906,Brugmansia_suaveolens[&index=49]:59.898417)[&index=229,posterior=0.506623,age_95%_HPD={49.8443,70.446}]:4.187612,Trompettia_cardenasiana[&index=51]:64.086029)[&index=230,posterior=0.538865,age_95%_HPD={55.0996,74.3358}]:9.493888)[&index=231,posterior=0.172457,age_95%_HPD={68.2657,78.9498}]:2.048567,((((((((Hawkesiophyton_panamense[&index=138]:32.071864,Juanulloa_mexicana[&index=139]:32.071864)[&index=232,posterior=0.988503,age_95%_HPD={22.0093,42.7464}]:5.083344,Merinthopodium_neuranthum[&index=137]:37.155207)[&index=233,posterior=0.974006,age_95%_HPD={27.5406,46.7587}]:3.063762,Markea_coccinea[&index=135]:40.218969)[&index=234,posterior=0.96151,age_95%_HPD={29.9934,49.2671}]:3.477002,Dyssochroma_viridiflorum[&index=136]:43.695971)[&index=235,posterior=0.968508,age_95%_HPD={33.3903,53.732}]:12.068691,Solandra_grandiflora[&index=134]:55.764661)[&index=236,posterior=0.892277,age_95%_HPD={45.4358,67.5669}]:3.592182,Schultesianthus_leucanthus[&index=140]:59.356843)[&index=237,posterior=0.788053,age_95%_HPD={48.9438,70.1592}]:7.221208,Exodeconus_miersii[&index=133]:66.578051)[&index=238,posterior=0.652337,age_95%_HPD={55.5176,77.3418}]:4.004084,(Mandragora_officinarum[&index=48]:64.977857,Nicandra_physalodes[&index=47]:64.977857)[&index=239,posterior=0.457636,age_95%_HPD={49.422,78.1601}]:5.604278)[&index=240,posterior=0.272182,age_95%_HPD={63.0259,77.8818}]:5.046348)[&index=241,posterior=0.132717,age_95%_HPD={70.1565,80.6375}]:1.186762,(((((((((Physochlaina_orientalis[&index=44]:33.841497,Przewalskia_tangutica[&index=45]:33.841497)[&index=242,posterior=0.713822,age_95%_HPD={23.4681,44.4324}]:3.641144,Scopolia_carniolica[&index=43]:37.482641)[&index=243,posterior=0.843039,age_95%_HPD={28.2013,47.5139}]:3.956706,(Hyoscyamus_niger[&index=41]:0.558844,H4895_Hyoscyamus_undulatus[&index=42,sampled_ancestor=0.677831]:0.0)[&index=244,posterior=0.677831,age_95%_HPD={0.010167,2.06699}]:40.880503)[&index=245,posterior=0.72182,age_95%_HPD={31.6097,51.8091}]:2.550368,Atropanthe_sinensis[&index=46]:43.989715)[&index=246,posterior=0.647088,age_95%_HPD={34.4204,53.5606}]:4.048468,(2003_0073_Nicotianosemen_minuta[&index=108,sampled_ancestor=0.015496,age_95%_HPD={2.61092,3.56194}]:25.244306,Anisodus_tanguticus[&index=40]:28.328598)[&index=247,posterior=0.084229,age_95%_HPD={7.91149,48.547}]:19.709585)[&index=248,posterior=0.302174,age_95%_HPD={38.8549,56.3164}]:4.183958,Atropa_belladonna[&index=39]:52.222141)[&index=249,posterior=0.331667,age_95%_HPD={42.825,60.8404}]:11.307356,Jaborosa_laciniata[&index=38]:63.529497)[&index=250,posterior=0.289178,age_95%_HPD={53.5889,73.5098}]:3.645673,((Nolana_divaricata[&index=37]:35.393218,Sclerophylax_spinescens[&index=36]:35.393218)[&index=251,posterior=0.545614,age_95%_HPD={17.7926,55.6932}]:3.554668,Lycium_americanum[&index=35]:38.947886)[&index=252,posterior=0.816546,age_95%_HPD={18.8021,58.8341}]:28.227284)[&index=253,posterior=0.167458,age_95%_HPD={58.3019,75.2794}]:3.338883,Latua_pubiflora[&index=34]:70.514052)[&index=254,posterior=0.215446,age_95%_HPD={62.2998,79.4171}]:6.301193)[&index=255,posterior=0.450637,age_95%_HPD={69.3777,82.6867}]:3.725221,((((((Cyphanthera_anthocercidea[&index=30]:8.710421,Duboisia_myoporoides[&index=32]:8.710421)[&index=256,posterior=0.964509,age_95%_HPD={3.44068,14.6474}]:4.379293,Crenidium_spinescens[&index=31]:13.089714)[&index=257,posterior=1.0,age_95%_HPD={6.77269,20.086}]:8.356891,Anthotroche_pannosa[&index=29]:21.446605)[&index=258,posterior=0.533617,age_95%_HPD={12.1278,32.2126}]:2.604087,Grammosolen_dixonii[&index=33]:24.050692)[&index=259,posterior=0.983754,age_95%_HPD={14.5633,35.0114}]:13.275679,Anthocercis_intricata[&index=28]:37.326371)[&index=260,posterior=0.940765,age_95%_HPD={24.9652,51.2382}]:13.697884,(Nicotiana_wigandioides[&index=26]:39.365457,Symonanthus_aromaticus[&index=27]:39.365457)[&index=261,posterior=0.374406,age_95%_HPD={11.555,58.7958}]:11.658798)[&index=262,posterior=0.860035,age_95%_HPD={35.2642,67.4494}]:29.516211)[&index=263,posterior=0.4014,age_95%_HPD={72.9146,87.1259}]:3.765839,((Heteranthia_decipiens[&index=23]:31.968349,Melananthus_guatemalensis[&index=24]:31.968349)[&index=264,posterior=0.939765,age_95%_HPD={17.8662,45.0315}]:14.35894,Schwenckia_americana[&index=25]:46.327288)[&index=265,posterior=0.83929,age_95%_HPD={31.8585,63.1704}]:37.979017)[&index=266,posterior=0.230942,age_95%_HPD={78.0262,91.8147}]:3.488394,(((((((Hunzikeria_texana[&index=19]:12.08766,Plowmania_nyctaginoides[&index=20]:12.08766)[&index=267,posterior=1.0,age_95%_HPD={4.98074,20.7365}]:11.034641,Bouchetia_anomala[&index=18]:23.122302)[&index=268,posterior=0.988253,age_95%_HPD={13.6107,32.7713}]:12.368905,Nierembergia_linariifolia[&index=17]:35.491206)[&index=269,posterior=0.955511,age_95%_HPD={23.8544,46.6408}]:11.469788,Leptoglossis_darcyana[&index=21]:46.960994)[&index=270,posterior=0.852287,age_95%_HPD={34.0299,59.0484}]:19.168305,Brunfelsia_australis[&index=16]:66.129299)[&index=271,posterior=0.752562,age_95%_HPD={54.0413,78.8007}]:6.625066,((Calibrachoa_humilis[&index=13]:22.089075,Fabiana_imbricata[&index=14]:22.089075)[&index=272,posterior=0.993252,age_95%_HPD={9.71909,34.9131}]:18.805136,Petunia_interior[&index=15]:40.894211)[&index=273,posterior=0.96101,age_95%_HPD={23.6825,59.7481}]:31.860153)[&index=274,posterior=0.675581,age_95%_HPD={61.6747,83.9461}]:9.816857,(((((Browallia_americana[&index=142]:22.20747,Streptosolen_jamesonii[&index=7]:22.20747)[&index=275,posterior=0.963009,age_95%_HPD={9.55127,39.3635}]:36.029227,Protoschwenkia_mandonii[&index=9]:58.236697)[&index=276,posterior=0.819045,age_95%_HPD={43.2941,71.7595}]:8.766288,((Cestrum_bracteatum[&index=5]:47.714143,Sessea_stipulata[&index=6]:47.714143)[&index=277,posterior=0.712322,age_95%_HPD={35.9753,60.2079}]:5.327692,Vestia_foetida[&index=4]:53.041835)[&index=278,posterior=0.96051,age_95%_HPD={40.7062,65.4094}]:13.96115)[&index=279,posterior=0.814796,age_95%_HPD={56.1974,76.732}]:5.764355,((Reyesia_chilensis[&index=11]:27.684403,Salpiglossis_sinuata[&index=10]:27.684403)[&index=280,posterior=0.948013,age_95%_HPD={10.7088,46.6072}]:28.706299,V_40898_Solanum_arnense[&index=8,sampled_ancestor=0.235941,age_95%_HPD={46.0823,47.9737}]:9.413789)[&index=281,posterior=0.072982,age_95%_HPD={46.0922,70.8028}]:16.376639)[&index=282,posterior=0.135716,age_95%_HPD={64.3016,82.5613}]:6.540376,(((Benthamiella_patagonica[&index=2]:10.28352,Pantacantha_ameghinoi[&index=3]:10.28352)[&index=283,posterior=0.996501,age_95%_HPD={4.17217,18.4928}]:18.224324,UF6500_Nephrosemen_reticulatus[&index=22,sampled_ancestor=0.004999,age_95%_HPD={0.039898,5.03294}]:25.974101)[&index=284,posterior=0.03849,age_95%_HPD={13.7765,47.1371}]:18.360652,Combera_paradoxa[&index=1]:46.868497)[&index=285,posterior=0.089728,age_95%_HPD={29.8495,69.7558}]:32.43922)[&index=286,posterior=0.114971,age_95%_HPD={70.5843,90.3605}]:3.263505)[&index=287,posterior=0.052237,age_95%_HPD={75.8878,89.0185}]:5.223479)[&index=288,posterior=0.84179,age_95%_HPD={79.4476,95.8274}]:6.349897,(Duckeodendron_cestroides[&index=148]:88.301553,Schizanthus_grahamii[&index=141]:88.301553)[&index=289,posterior=0.330667,age_95%_HPD={78.9217,96.9295}]:5.843044)[&index=290,posterior=0.426643,age_95%_HPD={87.7688,99.542}]:4.572127,((((Espadaea_amoena[&index=145]:11.414214,Goetzea_elegans[&index=146]:11.414214)[&index=291,posterior=0.99825,age_95%_HPD={4.687,19.1715}]:3.606064,Coeloneurum_ferrugineum[&index=147]:15.020278)[&index=292,posterior=0.997751,age_95%_HPD={7.18637,25.062}]:65.121259,Metternichia_princeps[&index=144]:80.141537)[&index=293,posterior=0.973257,age_95%_HPD={68.0275,93.4812}]:4.385502,Tsoala_tubiflora[&index=143]:84.527039)[&index=294,posterior=0.926268,age_95%_HPD={74.4476,96.9762}]:14.189685)[&index=295,posterior=1.0,age_95%_HPD={96.5725,100.331}];
+end;
+
+begin figtree;
+	set appearance.backgroundColorAttribute="Default";
+	set appearance.backgroundColour=#ffffff;
+	set appearance.branchColorAttribute="User selection";
+	set appearance.branchColorGradient=false;
+	set appearance.branchLineWidth=1.0;
+	set appearance.branchMinLineWidth=0.0;
+	set appearance.branchWidthAttribute="Fixed";
+	set appearance.foregroundColour=#000000;
+	set appearance.hilightingGradient=false;
+	set appearance.selectionColour=#2d3680;
+	set branchLabels.colorAttribute="User selection";
+	set branchLabels.displayAttribute="Branch times";
+	set branchLabels.fontName="sansserif";
+	set branchLabels.fontSize=8;
+	set branchLabels.fontStyle=0;
+	set branchLabels.isShown=false;
+	set branchLabels.significantDigits=4;
+	set colour.scheme.posterior="posterior:HSBContinuous{{false,false,0.0,0.0},0.0,0.5,0.5,0.5,0.5,0.5,false}";
+	set layout.expansion=0;
+	set layout.layoutType="RECTILINEAR";
+	set layout.zoom=0;
+	set legend.attribute=null;
+	set legend.fontSize=10.0;
+	set legend.isShown=false;
+	set legend.significantDigits=4;
+	set nodeBars.barWidth=4.0;
+	set nodeBars.displayAttribute=null;
+	set nodeBars.isShown=false;
+	set nodeLabels.colorAttribute="posterior";
+	set nodeLabels.displayAttribute="posterior";
+	set nodeLabels.fontName="sansserif";
+	set nodeLabels.fontSize=8;
+	set nodeLabels.fontStyle=0;
+	set nodeLabels.isShown=true;
+	set nodeLabels.significantDigits=2;
+	set nodeShapeExternal.colourAttribute=null;
+	set nodeShapeExternal.isShown=false;
+	set nodeShapeExternal.minSize=10.0;
+	set nodeShapeExternal.scaleType=Width;
+	set nodeShapeExternal.shapeType=Circle;
+	set nodeShapeExternal.size=4.0;
+	set nodeShapeExternal.sizeAttribute=null;
+	set nodeShapeInternal.colourAttribute=null;
+	set nodeShapeInternal.isShown=false;
+	set nodeShapeInternal.minSize=10.0;
+	set nodeShapeInternal.scaleType=Width;
+	set nodeShapeInternal.shapeType=Circle;
+	set nodeShapeInternal.size=4.0;
+	set nodeShapeInternal.sizeAttribute=null;
+	set polarLayout.alignTipLabels=false;
+	set polarLayout.angularRange=0;
+	set polarLayout.rootAngle=0;
+	set polarLayout.rootLength=100;
+	set polarLayout.showRoot=true;
+	set radialLayout.spread=0.0;
+	set rectilinearLayout.alignTipLabels=false;
+	set rectilinearLayout.curvature=0;
+	set rectilinearLayout.rootLength=100;
+	set scale.offsetAge=0.0;
+	set scale.rootAge=1.0;
+	set scale.scaleFactor=1.0;
+	set scale.scaleRoot=false;
+	set scaleAxis.automaticScale=true;
+	set scaleAxis.fontSize=8.0;
+	set scaleAxis.isShown=false;
+	set scaleAxis.lineWidth=1.0;
+	set scaleAxis.majorTicks=1.0;
+	set scaleAxis.minorTicks=0.5;
+	set scaleAxis.origin=0.0;
+	set scaleAxis.reverseAxis=false;
+	set scaleAxis.showGrid=true;
+	set scaleBar.automaticScale=true;
+	set scaleBar.fontSize=10.0;
+	set scaleBar.isShown=true;
+	set scaleBar.lineWidth=1.0;
+	set scaleBar.scaleRange=0.0;
+	set tipLabels.colorAttribute="User selection";
+	set tipLabels.displayAttribute="Names";
+	set tipLabels.fontName="sansserif";
+	set tipLabels.fontSize=8;
+	set tipLabels.fontStyle=0;
+	set tipLabels.isShown=true;
+	set tipLabels.significantDigits=4;
+	set trees.order=false;
+	set trees.orderType="increasing";
+	set trees.rooting=false;
+	set trees.rootingType="User Selection";
+	set trees.transform=false;
+	set trees.transformType="cladogram";
+end;
+
