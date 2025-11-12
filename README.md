@@ -7,7 +7,7 @@ Pre-print available at: [https://www.biorxiv.org/content/10.1101/2025.07.22.6661
 
 This repository contains the data and the code necessary to replicate the results and figures of this paper. The respitory contains both RevBayes and R code. Below are details on the organization og the files and instructions to run the analyses.
 
-We also provide some output files that can be useful for future analyses that want to sample from our posterior tree traces.
+
 
 ## Data
 
@@ -101,9 +101,15 @@ This repository includes an R project and all the R scripts are in the folder `\
 
 Finally, within the `R_scripts/traits_ASR/` folder, there are scripts and the data necessary to conduct all the ASR for continuous and categorical traits that we present in the manuscript. 
 
+***
+
 
 ## Provided output
 
+We also provide some output files that can be useful for future analyses that want to sample from our posterior tree traces.
+While we provide these files, they are not comprehensive of all the analyses we ran. Nevertheless, the code is commented and descriptive and you can re-run all the analyses described in the publication with it. 
+
+```
 |--output_no_time          # contains results of unrooted analyses
     |--_moleQ_GTR_G_morphQ_Mk_G_MCMC_uniform_1             # MCMC1
     |--_moleQ_GTR_G_morphQ_Mk_G_MCMC_uniform_1             # MCMC2
@@ -111,19 +117,21 @@ Finally, within the `R_scripts/traits_ASR/` folder, there are scripts and the da
 Inside each of these folders there is a .log file that containst parameter samples, and a compressed .trees file that contains the tree trace. MAP and MCC trees are also provided.
 
 |--output/final_runs        # contains results of unrooted analyses
-    |--time_heterogeneous            # time homogeneous TED analysis
+    |--time_heterogeneous      # time homogeneous TED analysis
         |--long_descriptive_name  # MCMC 1
         |--long_descriptive_name  # MCMC 2
-    |--time_homogeneous              # time heterogeneous TED analysis
+        |--unstable_fossils_trimmed   # trace and summary after removing unstable fossils. 
+    |--time_homogeneous        # time heterogeneous TED analysis
         |--long_descriptive_name  # MCMC 1
         |--long_descriptive_name  # MCMC 2
+```
 
 within each of these folders you can find:
 
-* tree.trees - full trees trace
-* extant_tree.trees - only extant tips tree trace
-* params.log - parameter trace
+* `tree.trees` - full trees trace
+* `extant_tree.trees` - only extant tips tree trace
+* `params.log` - parameter trace
 
-As well as MAP and MCC trees. Additionally, inside the TED analyses folders, you can find summary trees that were computed by combining the two MCC runs of each analyses (e.g., time_heterogeneous/MCC_tree_thetero.tre). The size of the merged traces files is too large to host in this repository, but I have provided R_scripts to combine the traces. 
+As well as MAP and MCC trees. Additionally, inside the TED analyses folders, you can find summary trees that were computed by combining the two MCC runs of each analyses (e.g., `time_heterogeneous/MCC_tree_thetero.tre`). The size of the merged traces files is too large to host in this repository, but I have provided R_scripts to combine the traces. 
 
 
