@@ -8,9 +8,8 @@
 #########################################################################
 
 
-
-# all the fossils
-fossil_names <- c("2003_0073_Nicotianosemen_minuta", 
+#all the fossils
+fossil_names <- c("2003_0073_Nicotianosemen_minuta",
                   "CCN6065_second_seed_Capsicum_pliocenicum",
                   "f_Eophysaloides_inflata",
                   "f_Lycianthoides_calycina",
@@ -24,10 +23,22 @@ fossil_names <- c("2003_0073_Nicotianosemen_minuta",
                   "UF6500_Nephrosemen_reticulatus",
                   "V_40891_Solanispermum_reniforme",
                   "V_40898_Solanum_arnense")
+# 
+# fossil_names <- c("2003_0073_Nicotianosemen_minuta", 
+#                   "CCN6065_second_seed_Capsicum_pliocenicum",
+#                   "f_Eophysaloides_inflata",
+#                   "f_Lycianthoides_calycina",
+#                   "K453A_Hyoscyamus_datureoides",
+#                   "K528_Solanum_miocenicus",
+#                   "K530_Solanoides_dorofeevii",
+#                   "K587B_Solanum_foveolatum",
+#                   "UF6500_Nephrosemen_reticulatus",
+#                   "V_40891_Solanispermum_reniforme",
+#                   "V_40898_Solanum_arnense")
 
 tree.trace  <- read.tree("output/final_runs/time_heterogeneous/trees_combined.trees")
 sample_size <- 13900
-trees <- tree.trace[1:sample_size]
+trees       <- tree.trace[1:sample_size]
 
 #------------------------------------------
 # Extract fossils and its sister clades
@@ -181,15 +192,15 @@ for (i in 1:length(fossil_names)){
 }
 
 
-# # save figures
+# save figures
 # for (f in 1:length(plots)){
-#   
-#   pdf(paste0("figures/Manuscript_figs/sister_groups_PP_one_fossil_aat/", fossil_names[f], ".pdf"), width=4, height=2.5)
-#   
+# 
+#   pdf(paste0("output_no_time/onefossil_dist_plots/", fossil_names[f], ".pdf"), width=4, height=2.5)
+# 
 #   plot(plots[[f]])
-#   
+# 
 #   dev.off()
-#   
+# 
 # }
 
 
